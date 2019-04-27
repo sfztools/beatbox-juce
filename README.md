@@ -50,9 +50,14 @@ When constructed as a `.zip` file the beat description file should be named `des
 
 ## Using the free Groove Monkee MIDI files
 
-I built 
+I built some beat descriptions that uses the [free midi pack from Groove Monkey](https://groovemonkee.com/pages/free-midi-loops).
+You can register and download the pack, and put the `.json` files at the root of the directory (the one with all the directories "Ballad, Big Easy, ...).
+You should then be able to add these in the application.
 
 ## Using paid Groove Monkee files
+
+I put the beat descriptions I made for some of the other Groove Monkee packs in here.
+I'll update them if I make more (or receive them from someone!).
 
 ## Other files
 
@@ -110,6 +115,7 @@ Each part contains:
 - `name`: the part name
 - `midi_file`: the main loop file, described as with `intro` and `ending`
 - `fills`: an array of MIDI file descriptions which contains the fills for the part.
+- `transition`: the MIDI file description for the transition fill to the next part.
 
 Parts are always changed in sequence within the application.
 Fills can be randomly or sequentially launched.
@@ -126,7 +132,17 @@ Improving SFZero or rewriting an SFZ plugin is in my pipeline, so stay tuned.
 # Basic usage
 
 The usage is quite straightforward.
-Upon launching the application
+Upon launching the application you have to select at least a beat description by clicking on Rhythms.
+You will be presented with a list of the current beat descriptions you have previously entered, as well as a button to add more.
+To load a rhythm, just double click it.
+You may also load an SFZ file in the same way, or use the MIDI output.
+
+Once the rhythm is loaded, you can use the buttons to launch the rhythm, fills and parts.
+You can also use a midi controller by setting the proper input channel and input CC in the options.
+After this, the behavior is:
+- a tap starts the live rhythm, and if already started it makes a fill.
+- a long tap transitions into the next part.
+- 2 taps trigger the ending.
 
 # Contact and contributions
 
