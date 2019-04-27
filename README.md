@@ -11,7 +11,7 @@ I'll put up some forum or sharing platform as soon as I can.
 
 # Installation
 
-Windows binaries are available [here](), along with Raspberry Pi binaries.
+Windows binaries are available [here](https://github.com/paulfd/rhythmbox/releases), along with Raspberry Pi binaries.
 
 ## Compiling using the Projucer
 
