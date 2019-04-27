@@ -53,9 +53,9 @@ bool Configuration::parseConfiguration(const String& filename)
     
     if (originalConfig.hasProperty("rhythms"))
     {
-        for (auto& rythm : *originalConfig.getProperty("instruments", var()).getArray())
+        for (auto& rhythm : *originalConfig.getProperty("rhythms", var()).getArray())
         {
-            const auto descriptionFile = dataDirectory.getChildFile(rythm.toString());
+            const auto descriptionFile = dataDirectory.getChildFile(rhythm.toString());
             addDescription(descriptionFile);
         }
     }
