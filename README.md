@@ -153,8 +153,8 @@ However the best is probably to build beat descriptions/sfz files and share the 
 
 ## Acknowledgments
 
-The original SFZero code is from Steve Folta [](http://stevefolta.github.io/SFZero/).
+The original SFZero code is from Steve Folta [http://stevefolta.github.io/SFZero/].
 There are many updates to the original codebase.
-The one I'm using has been improved by Leo Olivers and cleaned up by MatkatMusic [](https://github.com/matkatmusic).
+The one I'm using has been improved by Leo Olivers and cleaned up by MatkatMusic [https://github.com/matkatmusic].
 
-JUCE is owned by ROLI [](https://roli.com/).
+JUCE is owned by ROLI [https://roli.com/].
