@@ -84,8 +84,8 @@ BeatSequence::BeatSequence(const MidiFile& midiFile, int numberOfBars, int ignor
     const auto ticksPerQuarter = midiFile.getTimeFormat();
     if (ticksPerQuarter < 0)
     {
-    spdlog::error("We don't handle SMTPE time scale yet");
-    return;
+        spdlog::error("We don't handle SMTPE time scale yet");
+        return;
     }
 
     quartersPerBar = extractFileQuarterPerBars(midiFile);
@@ -93,8 +93,8 @@ BeatSequence::BeatSequence(const MidiFile& midiFile, int numberOfBars, int ignor
     const auto fileNumberOfBars = static_cast<int>(std::ceil(midiFile.getLastTimestamp() / ticksPerQuarter / quartersPerBar));
     if (fileNumberOfBars == 0)
     {
-    spdlog::error("Empty MIDI file \"{}\"");
-    return;
+        spdlog::error("Empty MIDI file \"{}\"");
+        return;
     }
     numberOfBars = std::min(numberOfBars, fileNumberOfBars);
 
@@ -102,51 +102,51 @@ BeatSequence::BeatSequence(const MidiFile& midiFile, int numberOfBars, int ignor
     const auto deltaTime = ignoreBars * ticksPerQuarter * quartersPerBar;
     for (auto trackIdx = 0; trackIdx < midiFile.getNumTracks(); ++trackIdx)
     {
-    auto track = midiFile.getTrack(trackIdx);
-    // Check notes before the start of the sequence
-    // We check 1 bar before the ignore, in case there are some off-beat note going on
-    if (ignoreBars > 0)
-    {
-        auto currentIdx = track->getNextIndexAtTime(deltaTime - ticksPerQuarter);
-        while (currentIdx < track->getNumEvents() && track->getEventTime(currentIdx) < deltaTime)
+        auto track = midiFile.getTrack(trackIdx);
+        // Check notes before the start of the sequence
+        // We check 1 bar before the ignore, in case there are some off-beat note going on
+        if (ignoreBars > 0)
         {
-            const auto midiEvent = track->getEventPointer(currentIdx);
-            if (track->getTimeOfMatchingKeyUp(currentIdx) > deltaTime)
+            auto currentIdx = track->getNextIndexAtTime(deltaTime - ticksPerQuarter);
+            while (currentIdx < track->getNumEvents() && track->getEventTime(currentIdx) < deltaTime)
             {
-                // We have to map it to timestamp 0 with the proper duration
-                const auto noteOnTime = midiEvent->message.getTimeStamp();
-                const auto noteOffTime = midiEvent->noteOffObject != nullptr ? midiEvent->noteOffObject->message.getTimeStamp() : noteOnTime + 1.0 / 24.0;
-                // Check that we are more in that out
-                if (deltaTime - noteOnTime < noteOffTime - deltaTime)
+                const auto midiEvent = track->getEventPointer(currentIdx);
+                if (track->getTimeOfMatchingKeyUp(currentIdx) > deltaTime)
                 {
-                    const auto noteDuration = midiEvent->message.getTimeStamp() - noteOffTime;
+                    // We have to map it to timestamp 0 with the proper duration
+                    const auto noteOnTime = midiEvent->message.getTimeStamp();
+                    const auto noteOffTime = midiEvent->noteOffObject != nullptr ? midiEvent->noteOffObject->message.getTimeStamp() : noteOnTime + 1.0 / 24.0;
+                    // Check that we are more in that out
+                    if (deltaTime - noteOnTime < noteOffTime - deltaTime)
+                    {
+                        const auto noteDuration = midiEvent->message.getTimeStamp() - noteOffTime;
+                        const auto normalizedNoteDuration = (noteOffTime - noteOnTime) / ticksPerQuarter;
+                        addEvent({ midiEvent->message.withTimeStamp(0), normalizedNoteDuration });
+                    }
+                }
+                currentIdx++;
+            }
+        }
+
+        // Check notes within the sequence
+        auto currentIdx = track->getNextIndexAtTime(deltaTime);
+        const auto endTime = deltaTime + numberOfBars * ticksPerQuarter * quartersPerBar;
+        while (currentIdx < track->getNumEvents() && track->getEventTime(currentIdx) < endTime)
+        {
+            auto midiEvent = track->getEventPointer(currentIdx);
+            if (midiEvent->message.isNoteOn())
+            {
+                const auto noteOnTime = midiEvent->message.getTimeStamp();
+                const auto noteOffTime = midiEvent->noteOffObject != nullptr ? midiEvent->noteOffObject->message.getTimeStamp() : noteOnTime + 1.0/24.0;
+                // Check that we are more in that out
+                if ((noteOffTime < endTime) || (endTime - noteOnTime > noteOffTime - endTime))
+                {
+                    const auto normalizedNoteOnTimestamp = (noteOnTime - deltaTime) / ticksPerQuarter;
                     const auto normalizedNoteDuration = (noteOffTime - noteOnTime) / ticksPerQuarter;
-                    addEvent({ midiEvent->message.withTimeStamp(0), normalizedNoteDuration });
+                    addEvent({ midiEvent->message.withTimeStamp(normalizedNoteOnTimestamp), normalizedNoteDuration });
                 }
             }
             currentIdx++;
         }
-    }
-
-    // Check notes within the sequence
-    auto currentIdx = track->getNextIndexAtTime(deltaTime);
-    const auto endTime = deltaTime + numberOfBars * ticksPerQuarter * quartersPerBar;
-    while (currentIdx < track->getNumEvents() && track->getEventTime(currentIdx) < endTime)
-    {
-        auto midiEvent = track->getEventPointer(currentIdx);
-        if (midiEvent->message.isNoteOn())
-        {
-            const auto noteOnTime = midiEvent->message.getTimeStamp();
-            const auto noteOffTime = midiEvent->noteOffObject != nullptr ? midiEvent->noteOffObject->message.getTimeStamp() : noteOnTime + 1.0/24.0;
-            // Check that we are more in that out
-            if ((noteOffTime < endTime) || (endTime - noteOnTime > noteOffTime - endTime))
-            {
-                const auto normalizedNoteOnTimestamp = (noteOnTime - deltaTime) / ticksPerQuarter;
-                const auto normalizedNoteDuration = (noteOffTime - noteOnTime) / ticksPerQuarter;
-                addEvent({ midiEvent->message.withTimeStamp(normalizedNoteOnTimestamp), normalizedNoteDuration });
-            }
-        }
-        currentIdx++;
-    }
-  } // Loop on tracks
+    } // Loop on tracks
 }
