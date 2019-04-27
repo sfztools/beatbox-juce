@@ -3,11 +3,11 @@
 This application is a live drummer that you can control using buttons or MIDI CC with at least 1 controller, as an arranger or a [BeatBuddy](https://singularsound.com/) pedal would.
 The drum loops are described in simple JSON files.
 The application either outputs MIDI notes, and can also generate sounds internally using SFZ instruments.
-For now the sound generation uses [SFZero](http://stevefolta.github.io/SFZero/), which has many limitations, which I may lift in the future given the time.
+For now the sound generation uses [SFZero](http://stevefolta.github.io/SFZero/), which has many limitations.
 It is possible to use it within a VST host with any drum machine, or with an external sound generator.
 Since it uses [JUCE](https://juce.com/), it should be almost cross platform, although I only tested Windows and Linux, and a tiny bit of Android.
 Contributions and comments are welcome, as well as beat description files.
-I'll put up some forum or sharing platform as soon as I can.
+I'll put up some forum or sharing platform at some point.
 
 ## Installation
 
