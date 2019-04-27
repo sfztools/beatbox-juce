@@ -1,0 +1,28 @@
+{
+    "name": "full",
+    "bpm" : 100,
+    "quarters_per_bar": 3,
+    "intro": { "filename" : "Basic_drum_pattern_with_16th_note_ride.mid" },
+    "ending": { "filename" : "Shuffle_feel_simple.mid" },
+    "parts": [
+        {
+            "name": "Part A",
+            "midi_file" : { "filename" : "Basic_drum_pattern_with_16th_note_ride.mid" },
+            "fills": [
+                { "filename" : "Basic_drum_pattern_with_16th_note_ride.mid" },
+                { "filename" : "Basic_drum_pattern_with_16th_note_ride.mid" },
+                { "filename" : "Basic_drum_pattern_with_16th_note_ride.mid" }
+            ],
+            "transition": { "filename" : "Basic_drum_pattern_with_16th_note_ride.mid" }
+        },
+        {
+            "name": "Part B",
+            "midi_file" : { "filename" : "Shuffle_feel_simple.mid" },
+            "fills": [
+                { "filename" : "Shuffle_feel_simple.mid" },
+                { "filename" : "Shuffle_feel_simple.mid" }
+            ],
+            "transition": { "filename" : "Shuffle_feel_simple.mid" }
+        }
+    ]
+}

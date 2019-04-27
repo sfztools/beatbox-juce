@@ -1,0 +1,11 @@
+{
+    "name": "subdirectories",
+    "bpm" : 100,
+    "quarters_per_bar": 4,
+    "parts": [
+        {
+            "name": "Part",
+            "midi_file" : { "filename" : "subdir/Basic_drum_pattern_with_16th_note_ride.mid" }
+        }
+    ]
+}
