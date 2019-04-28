@@ -1,0 +1,35 @@
+{
+    "name": "Half-Time Rock Free",
+    "group": "Rock",
+    "bpm": 140,
+    "quarters_per_bar": 4,
+    "parts": [
+        {
+            "name": "8ths",
+            "midi_file" : { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 8ths.mid" },
+            "fills": [
+                { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 8ths Fill 1.mid" },
+                { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 8ths Fill 2.mid" },
+                { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 8ths Fill 3.mid" },
+                { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 8ths Fill 4.mid" }
+            ],
+            "transition": { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 8ths Fill 1.mid" }
+        },
+        {
+            "name": "QTR Open Hats",
+            "midi_file" : { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 QTR OH.mid" },
+            "fills": [
+                { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 QTR OH Fill 1.mid" }
+            ],
+            "transition": { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 QTR OH Fill 1.mid" }
+        },
+        {
+            "name": "QTR Ride",
+            "midi_file" : { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 QTR Ride.mid" },
+            "fills": [
+                { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 QTR Ride Fill 1.mid" }
+            ],
+            "transition": { "filename" : "Rock Essentials 1/Half-Time Rock/140 HT 11 QTR Ride Fill 1.mid" }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Swing Beat Free",
+    "group": "Jazz",
+    "bpm" : 135,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Jazz Buddy/135 Swing Beat/Intro Fill 2.mid" },
+    "ending": { "filename" : "Jazz Buddy/135 Swing Beat/Outro Fill 3.mid" },
+    "parts": [
+        {
+            "name": "Main",
+            "midi_file" : { "filename" : "Jazz Buddy/135 Swing Beat/Swing Ride Comping A1.mid" },
+            "fills": [
+                { "filename" : "Jazz Buddy/135 Swing Beat/Swing SN Fill 01.mid" },
+                { "filename" : "Jazz Buddy/135 Swing Beat/Swing SN Fill 02.mid" },
+                { "filename" : "Jazz Buddy/135 Swing Beat/Swing SN Fill 03.mid" },
+                { "filename" : "Jazz Buddy/135 Swing Beat/Swing SN Fill 04.mid" }
+            ],
+            "transition": { "filename" : "Jazz Buddy/135 Swing Beat/Swing SN Fill 10.mid" }
+        }
+    ]
+}

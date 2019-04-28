@@ -1,8 +1,9 @@
 {
     "name": "Ballad Song 13",
     "group": "Ballad",
+    "bpm": 88,
     "quarters_per_bar": 4,
-    "intro": { "filename" : "Ballads/Song 13 088 Samples/Intro Fills/088 S13 Intro.mid" },
+    "intro": { "filename" : "Ballads/Song 13 088 Samples/Intro Fills/088 S13 Intro Fill 1.mid" },
     "ending": { "filename" : "Ballads/Song 13 088 Samples/Outro Fills/088 S13 Outro Fill 1.mid" },
     "parts": [
         {

@@ -42,14 +42,14 @@
             "fills": [
                 { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 01.mid" },
                 { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 02.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 03.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 04.mid" },
                 { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 05.mid" },
-                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 06.mid" },
                 { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 07.mid" },
                 { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 08.mid" },
-                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 09.mid" },
-                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 11.mid" }
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 10.mid" }
             ],
-            "transition": { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 12.mid" }
+            "transition": { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 11.mid" }
         }
     ]
 }
