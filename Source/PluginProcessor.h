@@ -28,6 +28,8 @@
 #include "BeatSequence.h"
 #include "Configuration.h"
 #include "SFZero.h"
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/basic_file_sink.h"
 #include <deque>
 #include <set>
 
@@ -184,6 +186,9 @@ private:
 
     sfzero::Synth sfzSynth;
     AudioFormatManager formatManager;
+
+    String logFile { File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox").getFullPathName() + "/log.txt" };
+    std::shared_ptr<spdlog::logger> defaultLogger { spdlog::basic_logger_mt("basic_logger", logFile.toStdString()) };
 
     // Parameters (Has to be last otherwise it create problem)
     AudioProcessorValueTreeState::ParameterLayout setUpParameters();

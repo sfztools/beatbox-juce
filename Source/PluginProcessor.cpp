@@ -35,9 +35,13 @@ RhythmBoxAudioProcessor::RhythmBoxAudioProcessor()
     ,	config(*this)
 {
     tempo = parameters.getRawParameterValue ("tempo");
+
+    // Set the default logger
+    spdlog::set_default_logger(defaultLogger);
     
     // Parse the default configuration
     config.parseConfiguration();
+
     
     // sfzero setup
     for(auto i = 0; i < 128; ++i)
