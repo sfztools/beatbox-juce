@@ -88,9 +88,9 @@ public:
     typedef AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
 
 private:
-    juce::OpenGLContext openGLContext;
+    //juce::OpenGLContext openGLContext;
 
-    int64 lastTap { -1};
+    int64 lastTap { -1 };
     RhythmBoxAudioProcessor& processor;
     AudioProcessorValueTreeState& processorParameters;
     Configuration& config;

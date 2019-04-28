@@ -32,7 +32,7 @@ RhythmBoxAudioProcessorEditor::RhythmBoxAudioProcessorEditor (RhythmBoxAudioProc
         config(config),
         processorParameters(parameters)
 {
-    openGLContext.attachTo(*getTopLevelComponent());
+    // openGLContext.attachTo(*getTopLevelComponent());
     
     addAndMakeVisible(beatManagerButton);
     beatManagerButton.setButtonText("Rhythms");
@@ -92,7 +92,7 @@ RhythmBoxAudioProcessorEditor::RhythmBoxAudioProcessorEditor (RhythmBoxAudioProc
 
 RhythmBoxAudioProcessorEditor::~RhythmBoxAudioProcessorEditor()
 {
-    openGLContext.detach();
+    // openGLContext.detach();
 }
 
 void RhythmBoxAudioProcessorEditor::playButtonClicked()
