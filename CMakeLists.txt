@@ -19,7 +19,6 @@ set(JUCE_MODULES
     juce_audio_processors
     juce_audio_utils
     juce_core
-    juce_opengl
     juce_data_structures
     juce_events
     juce_graphics
