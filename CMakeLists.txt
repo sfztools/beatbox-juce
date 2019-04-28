@@ -40,6 +40,9 @@ set(SOURCES
 )
 
 set(TEST_SOURCES
+    Source/BeatDescription.cpp 
+    Source/FileSearchers.cpp 
+    Source/BeatSequence.cpp 
     Tests/Main.cpp
     Tests/MidiNoteTests.cpp
     Tests/BeatSequenceTests.cpp
@@ -108,7 +111,7 @@ target_compile_features(${PROJECT_NAME}_Standalone PRIVATE cxx_std_17)
 
 ###############################
 # Test application (No WIN32 here, we want the main entry point and not WinMain)
-add_executable(${PROJECT_NAME}_Test ${SOURCES} ${TEST_SOURCES})
+add_executable(${PROJECT_NAME}_Test ${TEST_SOURCES})
 # Per OS properties
 if(UNIX)
     target_link_libraries(${PROJECT_NAME}_Test ${CMAKE_DL_LIBS} Threads::Threads )
