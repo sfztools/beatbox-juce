@@ -23,6 +23,8 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "BeatDescription.h"
 
+inline static File dataDirectory { File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox") };
+
 class RhythmBoxAudioProcessor;
 
 class Configuration
@@ -96,7 +98,7 @@ private:
     std::vector<File> sfzFiles;
 
     var originalConfig;
-    File dataDirectory{ File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox") };
+    // File dataDirectory{ File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox") };
 
     JUCE_LEAK_DETECTOR(Configuration);
 };

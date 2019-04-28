@@ -37,7 +37,10 @@ RhythmBoxAudioProcessor::RhythmBoxAudioProcessor()
     tempo = parameters.getRawParameterValue ("tempo");
 
     // Set the default logger
-    spdlog::set_default_logger(defaultLogger);
+    if (!dataDirectory.exists())
+        dataDirectory.createDirectory();
+    String logFile { dataDirectory.getFullPathName() + "/log.txt" };
+    spdlog::set_default_logger(spdlog::basic_logger_mt("basic_logger", logFile.toStdString()));
     
     // Parse the default configuration
     config.parseConfiguration();

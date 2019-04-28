@@ -187,9 +187,6 @@ private:
     sfzero::Synth sfzSynth;
     AudioFormatManager formatManager;
 
-    String logFile { File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox").getFullPathName() + "/log.txt" };
-    std::shared_ptr<spdlog::logger> defaultLogger { spdlog::basic_logger_mt("basic_logger", logFile.toStdString()) };
-
     // Parameters (Has to be last otherwise it create problem)
     AudioProcessorValueTreeState::ParameterLayout setUpParameters();
     AudioProcessorValueTreeState parameters{ *this, nullptr, Identifier("RhythmBoxParameters"), {} };
