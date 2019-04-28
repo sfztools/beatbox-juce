@@ -146,7 +146,7 @@ After this, the behavior is:
 
 ## Contact and contributions
 
-Feel free to post an issue, or contact me by email if you need.
+Feel free to post an issue, or contact me by email at paulfd@outlook.fr if you need.
 Any contribution is welcome.
 There are many things to improve in the code and most notably in the GUI which is terrible but I'm very bad at this.
 However the best is probably to build beat descriptions/sfz files and share the love! :)
