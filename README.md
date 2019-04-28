@@ -36,7 +36,7 @@ cmake --build . -j 8 --config Release
 There are 3 targets:
 - `rhythmbox_Standalone` for the standalone application
 - `rhythmbox_VST` for the VST3 plugin
-- `rhythmbox_Test` for the test suite
+- `rhythmbox_Test` for the test suite.
 Replace 8 by your number of cores, and Release with Debug if you wish.
 
 ## Beat descriptions
@@ -53,6 +53,9 @@ When constructed as a `.zip` file the beat description file should be named `des
 I built some beat descriptions that uses the [free midi pack from Groove Monkey](https://groovemonkee.com/pages/free-midi-loops).
 You can register and download the pack, and put the `.json` files at the root of the directory (the one with all the directories "Ballad, Big Easy, ...).
 You should then be able to add these in the application.
+I also provide complete packages with MIDI files from their ["Beat Farm"](https://groovemonkee.com/pages/beat-farm-free-midi-beats).
+These are provided as `.zip` files.
+You don't need to extract them, just add them to your Rhythm library :)
 
 ### Using paid Groove Monkee files
 
@@ -146,7 +149,7 @@ After this, the behavior is:
 
 ## Contact and contributions
 
-Feel free to post an issue, or contact me by email if you need.
+Feel free to post an issue, or contact me by email at paulfd@outlook.fr if you need.
 Any contribution is welcome.
 There are many things to improve in the code and most notably in the GUI which is terrible but I'm very bad at this.
 However the best is probably to build beat descriptions/sfz files and share the love! :)
