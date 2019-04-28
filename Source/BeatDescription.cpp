@@ -24,9 +24,7 @@
 #include "spdlog/fmt/ostr.h"
 
 BeatDescription::BeatDescription(const File& descriptionFile)
-{
-    spdlog::info("Reading beat information from \"{}\"", descriptionFile.getFullPathName());
-    
+{    
     if (!descriptionFile.exists())
     {
         spdlog::error("Description file does not exist \"{}\"", descriptionFile.getFullPathName());
@@ -94,7 +92,8 @@ void BeatDescription::parseDescription(const var& description, const FileSearche
             for (auto& fill : *part.getProperty("fills", var()).getArray())
             {
                 auto fillSequence = readSequence(fill, searcher);
-                if (fillSequence->getNumEvents() > 0) { beatPart.fills.push_back(fillSequence); }
+                if (fillSequence != nullptr && fillSequence->getNumEvents() > 0)
+                    beatPart.fills.push_back(fillSequence);
             }
         }
         beatPart.transition = readSequence(part.getProperty("transition", var()), searcher);
