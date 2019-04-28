@@ -184,7 +184,7 @@ void RhythmBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
             // If we have a queue of sequences we go to the next one
             else if (sequences.size() > 1)
             {
-                poppedSequences.emplace_back(sequences.front());
+                poppedSequences.push_back(sequences.front());
                 sequences.pop_front();
             }
             // If we emptied the sequences (except the last) while in a transition/fillin state, we're back in the normal state
@@ -208,7 +208,7 @@ void RhythmBoxAudioProcessor::deferNoteOn(int noteNumber, uint8 velocity, double
         return;
 
     const auto outputMidiChannel = config.getOutputChannel();
-    deferredEvents.emplace_back(MidiMessage::noteOn(outputMidiChannel, noteNumber, velocity).withTimeStamp(timestamp));
+    deferredEvents.push_back(MidiMessage::noteOn(outputMidiChannel, noteNumber, velocity).withTimeStamp(timestamp));
 }
 
 void RhythmBoxAudioProcessor::deferNoteOff(int noteNumber, double timestamp)
@@ -219,7 +219,7 @@ void RhythmBoxAudioProcessor::deferNoteOff(int noteNumber, double timestamp)
         return;
 
     const auto outputMidiChannel = config.getOutputChannel();
-    deferredEvents.emplace_back(MidiMessage::noteOff(outputMidiChannel, noteNumber).withTimeStamp(timestamp));
+    deferredEvents.push_back(MidiMessage::noteOff(outputMidiChannel, noteNumber).withTimeStamp(timestamp));
 }
 
 void RhythmBoxAudioProcessor::processInputMidiEvents(MidiBuffer& midiMessages, double normalizedSamplePeriod)
