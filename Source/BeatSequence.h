@@ -81,11 +81,11 @@ private:
 };
 
 struct TimestampComparison {
-    bool operator() (const MidiMessage& lhs, const MidiMessage& rhs)
+    bool operator() (const MidiMessage& lhs, const MidiMessage& rhs) const
     {
         return lhs.getTimeStamp() < rhs.getTimeStamp();
     }
-    bool operator() (const MidiNote& lhs, const MidiNote& rhs)
+    bool operator() (const MidiNote& lhs, const MidiNote& rhs) const
     {
         return lhs.getTimeStamp() < rhs.getTimeStamp();
     }
