@@ -1,0 +1,34 @@
+{
+    "name": "Slow Blues 12-8",
+    "group": "Blues",
+    "bpm" : 80,
+    "quarters_per_bar": 6,
+    "parts": [
+        {
+            "name": "Hat loop",
+            "midi_file" : { "filename" : "12-8 Slow Blues/12-8 Slow Hat.mid", "bars": 4, "ignore_bars": 1 },
+            "transition": { "filename" : "12-8 Slow Blues/12-8 Slow Hat F6.mid", "bars": 1, "ignore_bars": 11 },
+            "fills": [
+                { "filename" : "12-8 Slow Blues/12-8 Slow Hat F1.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Hat F2.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Hat F3.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Hat F4.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Hat F5.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Hat F6.mid", "bars": 1, "ignore_bars": 11 }
+            ]
+        },
+        {
+            "name": "Ride loop",
+            "midi_file" : { "filename" : "12-8 Slow Blues/12-8 Slow Ride.mid", "bars": 4, "ignore_bars": 1 },
+            "transition": { "filename" : "12-8 Slow Blues/12-8 Slow Ride F6.mid", "bars": 1, "ignore_bars": 11 },
+            "fills": [
+                { "filename" : "12-8 Slow Blues/12-8 Slow Ride F1.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Ride F2.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Ride F3.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Ride F4.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Ride F5.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "12-8 Slow Blues/12-8 Slow Ride F6.mid", "bars": 1, "ignore_bars": 11 }
+            ]
+        }
+    ]
+}

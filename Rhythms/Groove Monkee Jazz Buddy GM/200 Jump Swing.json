@@ -1,0 +1,38 @@
+{
+    "name": "Jump Swing",
+    "group": "Jazz",
+    "bpm" : 200,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "200 Jump Swing/Intros/Jump Intro Fill 1.mid" },
+    "ending": { "filename" : "200 Jump Swing/Outros/Jump Outro Fill 3.mid" },
+    "parts": [
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "200 Jump Swing/Grooves/Jump Swing Ride.mid" },
+            "fills": [
+                { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 1.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 2.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 3.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 4.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 5.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 6.mid" }
+            ],
+            "transition": { "filename" : "200 Jump Swing/Fills/Jump Ride Fill 7.mid" }
+        },
+        {
+            "name": "Tom",
+            "midi_file" : { "filename" : "200 Jump Swing/Grooves/Jump Tom Groove.mid" },
+            "fills": [
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 1.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 2.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 3.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 4.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 5.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 6.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 7.mid" },
+                { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 8.mid" }
+            ],
+            "transition": { "filename" : "200 Jump Swing/Fills/Jump Tom Groove Fill 9.mid" }
+        }
+    ]
+}

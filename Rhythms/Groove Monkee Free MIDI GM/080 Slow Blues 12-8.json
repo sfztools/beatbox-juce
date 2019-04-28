@@ -1,0 +1,13 @@
+{
+    "name": "Slow Blues 12-8 Free",
+    "group": "Blues",
+    "bpm" : 80,
+    "quarters_per_bar": 6,
+    "parts": [
+        {
+            "name": "Ride loop",
+            "midi_file" : { "filename" : "Blues/12-8 Blues/080 12-8 Slow Ride.mid", "bars": 4, "ignore_bars": 1 },
+            "fills": [ ]
+        }
+    ]
+}

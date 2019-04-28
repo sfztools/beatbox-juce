@@ -1,0 +1,34 @@
+{
+    "name": "Slow Blues D",
+    "group": "Blues",
+    "bpm" : 82,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "8-Bar Blues/082 Slow Blues D/Slow Blues D Bonus/Slow Blues D Short Intro.mid"},
+    "ending": { "filename" : "8-Bar Blues/082 Slow Blues D/Slow Blues D Bonus/Slow Blues D Ending.mid"},
+    "parts": [
+        {
+            "name": "Hat loop",
+            "midi_file" : { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F1 S.mid", "bars": 4, "ignore_bars": 1 },
+            "fills": [
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F2 S.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F3 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F4 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F5 L.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F6 L.mid", "bars": 1, "ignore_bars": 7 }
+            ],
+            "transition": { "filename" : "8-Bar Blues/082 Slow Blues D/Hat Grooves/Slow Blues D Hats F1 S.mid", "bars": 1, "ignore_bars": 7 }
+        },
+        {
+            "name": "Ride loop",
+            "midi_file" : { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F1 S.mid", "bars": 4, "ignore_bars": 1},
+            "fills": [
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F2 S.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F3 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F4 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F5 L.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F6 L.mid", "bars": 1, "ignore_bars": 7 }
+            ],
+            "transition": { "filename" : "8-Bar Blues/082 Slow Blues D/Ride Grooves/Slow Blues D Ride F1 S.mid", "bars": 1, "ignore_bars": 7 }
+        }
+    ]
+}

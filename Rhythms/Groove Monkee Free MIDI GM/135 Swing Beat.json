@@ -1,0 +1,45 @@
+{
+    "name": "Swing Beat",
+    "group": "Jazz",
+    "bpm" : 135,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Jazz Buddy GM/135 Swing Beat/Intros/Swing Intro Fill 3.mid" },
+    "ending": { "filename" : "Jazz Buddy GM/135 Swing Beat/Outros/Swing Outro Fill 1.mid" },
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "Jazz Buddy GM/135 Swing Beat/Grooves/Swing Hat SN 4.mid" },
+            "fills": [
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 01.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 02.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 03.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 04.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 05.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 06.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 07.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 08.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 10.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 11.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 12.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 13.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 14.mid" }
+            ],
+            "transition": { "filename" : "Jazz Buddy GM/135 Swing Beat/Hat Fills/Swing Hat SN Fill 09.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "Jazz Buddy GM/135 Swing Beat/Grooves/Swing Ride SN 4.mid" },
+            "fills": [
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 1.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 2.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 3.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 4.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 5.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 6.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 7.mid" },
+                { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 8.mid" }
+            ],
+            "transition": { "filename" : "Jazz Buddy GM/135 Swing Beat/Ride Fills/Swing Ride SN BB Fill 9.mid" }
+        }
+    ]
+}

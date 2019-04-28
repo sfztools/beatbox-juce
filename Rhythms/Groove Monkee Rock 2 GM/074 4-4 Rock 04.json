@@ -1,0 +1,33 @@
+{
+    "name": "4-4 Rock 04",
+    "group": "Rock",
+    "bpm" : 74,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Song 04 4-4 074 BPM/Fills/074 Intro No Snare Fill 1.mid" },
+    "parts": [
+        {
+            "name": "Verse",
+            "midi_file" : { "filename" : "Song 04 4-4 074 BPM/Grooves/074 Verse HH Tip.mid" },
+            "fills": [
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Verse HH Tip Fill 1.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Verse HH Tip Fill 2.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Verse HH Tip Fill 3.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Verse HH Tip Fill 4.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Verse HH Tip Fill 5.mid" }
+            ],
+            "transition": { "filename" : "Song 04 4-4 074 BPM/Fills/074 Verse HH Tip Fill 6.mid" }
+        },
+        {
+            "name": "Chorus",
+            "midi_file" : { "filename" : "Song 04 4-4 074 BPM/Grooves/074 Chorus Basic Bell.mid" },
+            "fills": [
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Chorus Basic Bell Fill 1.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Chorus Basic Bell Fill 2.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Chorus Basic Bell Fill 3.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Chorus Basic Bell Fill 4.mid" },
+                { "filename" : "Song 04 4-4 074 BPM/Fills/074 Chorus Basic Bell Fill 5.mid" }
+            ],
+            "transition": { "filename" : "Song 04 4-4 074 BPM/Fills/074 Chorus Basic Bell Fill 6.mid" }
+        }
+    ]
+}

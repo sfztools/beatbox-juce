@@ -1,0 +1,40 @@
+{
+    "name": "Jazz Ballad",
+    "group": "Jazz",
+    "bpm" : 68,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "068 Ballad/Intros/Ballad Intro Fill 3.mid" },
+    "ending": { "filename" : "068 Ballad/Outros/Ballad Outro Fill 3.mid" },
+    "parts": [
+        {
+            "name": "Stick on 4",
+            "midi_file" : { "filename" : "068 Ballad/Grooves/Ballad A Stick on 4.mid" },
+            "fills": [
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 01.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 02.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 03.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 04.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 05.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 06.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 07.mid" },
+                { "filename" : "068 Ballad/A Fills/Ballad A Fill 08.mid" }
+            ],
+            "transition": { "filename" : "068 Ballad/A Fills/Ballad A Fill 09.mid" }
+        },
+        {
+            "name": "Stick BB",
+            "midi_file" : { "filename" : "068 Ballad/Grooves/Ballad B Stick BB.mid" },
+            "fills": [
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 1.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 2.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 3.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 4.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 5.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 6.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 7.mid" },
+                { "filename" : "068 Ballad/B Fills/Ballad B Fill 8.mid" }
+            ],
+            "transition": { "filename" : "068 Ballad/B Fills/Ballad B Fill 9.mid" }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "4-4 Rock 03",
+    "group": "Rock",
+    "bpm" : 72,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Song 03 4-4 072 BPM/Fills/072 Intro Stick Tom Fill 1.mid" },
+    "parts": [
+        {
+            "name": "Verse 16th",
+            "midi_file" : { "filename" : "Song 03 4-4 072 BPM/Grooves/072 Verse 1 16ths.mid" },
+            "fills": [
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Verse 1 16ths Fill 1.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Verse 1 16ths Fill 2.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Verse 1 16ths Fill 3.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Verse 1 16ths Fill 4.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Verse 1 16ths Fill 5.mid" }
+            ],
+            "transition": { "filename" : "Song 03 4-4 072 BPM/Fills/072 Verse 1 16ths Fill 6.mid" }
+        },
+        {
+            "name": "Chorus 16th",
+            "midi_file" : { "filename" : "Song 03 4-4 072 BPM/Grooves/072 Chorus Ride 16ths.mid" },
+            "fills": [
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Chorus Ride 16ths Fill 1.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Chorus Ride 16ths Fill 2.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Chorus Ride 16ths Fill 3.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Chorus Ride 16ths Fill 4.mid" },
+                { "filename" : "Song 03 4-4 072 BPM/Fills/072 Chorus Ride 16ths Fill 5.mid" }
+            ],
+            "transition": { "filename" : "Song 03 4-4 072 BPM/Fills/072 Chorus Ride 16ths Fill 6.mid" }
+        }
+    ]
+}

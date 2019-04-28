@@ -1,0 +1,34 @@
+{
+    "name": "Half-Time",
+    "group": "Blues",
+    "bpm" : 136,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "8-Bar Blues/136 Half-Time/Half-Time Bonus/Half-Time Short Intro.mid" },
+    "ending": { "filename" : "8-Bar Blues/136 Half-Time/Half-Time Bonus/Half-Time Ending.mid" },
+    "parts": [
+        {
+            "name": "Hat loop",
+            "midi_file" : { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F1 S.mid", "bars": 4, "ignore_bars": 1 },
+            "fills": [
+                { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F2 S.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F3 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F4 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F5 L.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F6 L.mid", "bars": 1, "ignore_bars": 7 }
+            ],
+            "transition": { "filename" : "8-Bar Blues/136 Half-Time/Hat Grooves/Half-Time Hats F1 S.mid", "bars": 1, "ignore_bars": 7 }
+        },
+        {
+            "name": "Ride loop",
+            "midi_file" : { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F1 S.mid", "bars": 4, "ignore_bars": 1},
+            "fills": [
+                { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F2 S.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F3 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F4 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F5 L.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F6 L.mid", "bars": 1, "ignore_bars": 7 }
+            ],
+            "transition": { "filename" : "8-Bar Blues/136 Half-Time/Ride Grooves/Half-Time Ride F1 S.mid", "bars": 1, "ignore_bars": 7 }
+        }
+    ]
+}

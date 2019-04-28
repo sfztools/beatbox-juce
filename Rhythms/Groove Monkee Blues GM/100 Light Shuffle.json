@@ -1,0 +1,33 @@
+{
+    "name": "Light Shuffle",
+    "group": "Blues",
+    "bpm" : 100,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "8-Bar Blues/120 Shuffle A/Shuffle A Bonus/Shuffle A Short Intro.mid" },
+    "parts": [
+        {
+            "name": "Hat loop",
+            "midi_file" : { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F1 S.mid", "bars": 4, "ignore_bars": 1 },
+            "fills": [
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F2 S.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F3 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F4 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F5 L.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F6 L.mid", "bars": 1, "ignore_bars": 7 }
+            ],
+            "transition": { "filename" : "8-Bar Blues/100 Light Shuffle/Hat Grooves/Light Hats F1 S.mid", "bars": 1, "ignore_bars": 7 }
+        },
+        {
+            "name": "Ride loop",
+            "midi_file" : { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F1 S.mid", "bars": 4, "ignore_bars": 1},
+            "fills": [
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F2 S.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F3 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F4 M.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F5 L.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F6 L.mid", "bars": 1, "ignore_bars": 7 }
+            ],
+            "transition": { "filename" : "8-Bar Blues/100 Light Shuffle/Ride Grooves/Light Ride F1 S.mid", "bars": 1, "ignore_bars": 7 }
+        }
+    ]
+}

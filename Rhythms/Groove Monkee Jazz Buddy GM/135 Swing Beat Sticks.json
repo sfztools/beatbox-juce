@@ -1,0 +1,40 @@
+{
+    "name": "Swing Beat Sticks",
+    "group": "Jazz",
+    "bpm" : 135,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "135 Swing Beat/Intros/Swing Intro Fill 3.mid" },
+    "ending": { "filename" : "135 Swing Beat/Outros/Swing Outro Fill 1.mid" },
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "135 Swing Beat/Grooves/Swing Hat Stick 4.mid" },
+            "fills": [
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 1.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 2.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 3.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 4.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 5.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 6.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 7.mid" },
+                { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 8.mid" }
+            ],
+            "transition": { "filename" : "135 Swing Beat/Hat Fills/Swing Hat Stick 4 Fill 9.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "135 Swing Beat/Grooves/Swing Ride Stick 4.mid" },
+            "fills": [
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 1.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 2.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 3.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 4.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 5.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 6.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 7.mid" },
+                { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 8.mid" }
+            ],
+            "transition": { "filename" : "135 Swing Beat/Ride Fills/Swing Ride Stick 4 Fill 9.mid" }
+        }
+    ]
+}

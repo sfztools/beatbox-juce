@@ -1,0 +1,33 @@
+{
+    "name": "4-4 Rock 11",
+    "group": "Rock",
+    "bpm" : 110,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 2.mid" },
+    "parts": [
+        {
+            "name": "Verse",
+            "midi_file" : { "filename" : "Song 11 4-4 110 BPM/Grooves/110 Verse 8ths Stick.mid" },
+            "fills": [
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 1.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 2.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 3.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 4.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 5.mid" }
+            ],
+            "transition": { "filename" : "Song 11 4-4 110 BPM/Fills/110 Verse 8ths Stick Fill 6.mid" }
+        },
+        {
+            "name": "Chorus",
+            "midi_file" : { "filename" : "Song 11 4-4 110 BPM/Grooves/110 Chorus QTR Feel.mid" },
+            "fills": [
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Chorus QTR Feel Fill 1.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Chorus QTR Feel Fill 2.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Chorus QTR Feel Fill 3.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Chorus QTR Feel Fill 4.mid" },
+                { "filename" : "Song 11 4-4 110 BPM/Fills/110 Chorus QTR Feel Fill 5.mid" }
+            ],
+            "transition": { "filename" : "Song 11 4-4 110 BPM/Fills/110 Chorus QTR Feel Fill 6.mid" }
+        }
+    ]
+}

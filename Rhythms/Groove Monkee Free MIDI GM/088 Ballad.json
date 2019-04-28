@@ -1,0 +1,29 @@
+{
+    "name": "Ballad Song 13",
+    "group": "Ballad",
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Ballads/Song 13 088 Samples/Intro Fills/088 S13 Intro.mid" },
+    "ending": { "filename" : "Ballads/Song 13 088 Samples/Outro Fills/088 S13 Outro Fill 1.mid" },
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "Ballads/Song 13 088 Samples/Grooves/088 S13 Verse Hat.mid" },
+            "fills": [
+                { "filename" : "Ballads/Song 13 088 Samples/Verse Fills/088 S13 Verse Fill 01.mid" },
+                { "filename" : "Ballads/Song 13 088 Samples/Verse Fills/088 S13 Verse Fill 02.mid" },
+                { "filename" : "Ballads/Song 13 088 Samples/Verse Fills/088 S13 Verse Fill 04.mid" }
+            ],
+            "transition": { "filename" : "Ballads/Song 13 088 Samples/Verse Fills/088 S13 Verse Fill 05.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "Ballads/Song 13 088 Samples/Grooves/088 S13 Chorus Ride.mid" },
+            "fills": [
+                { "filename" : "Ballads/Song 13 088 Samples/Chorus Fills/088 S13 Chorus Fill 01.mid" },
+                { "filename" : "Ballads/Song 13 088 Samples/Chorus Fills/088 S13 Chorus Fill 02.mid" },
+                { "filename" : "Ballads/Song 13 088 Samples/Chorus Fills/088 S13 Chorus Fill 03.mid" }
+            ],
+            "transition": { "filename" : "Ballads/Song 13 088 Samples/Chorus Fills/088 S13 Chorus Fill 12.mid" }
+        }
+    ]
+}

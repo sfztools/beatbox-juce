@@ -1,0 +1,55 @@
+{
+    "name": "Cold Shock",
+    "group": "Blues",
+    "bpm" : 110,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Blues Classics/110 Cold Shock/Intro Fills/Intro Fill 4.mid" },
+    "ending": { "filename" : "Blues Classics/110 Cold Shock/Outro Fills/Outro Fill 3.mid" },
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "Blues Classics/110 Cold Shock/Grooves/Cold Hat.mid" },
+            "fills": [
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 01.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 02.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 05.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 06.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 07.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 08.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 09.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 11.mid" }
+            ],
+            "transition": { "filename" : "Blues Classics/110 Cold Shock/Hat Fills/Hat Fill 12.mid" }
+        },
+        {
+            "name": "Open Hat",
+            "midi_file" : { "filename" : "Blues Classics/110 Cold Shock/Grooves/Cold Open Hat.mid" },
+            "fills": [
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 01.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 02.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 05.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 06.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 07.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 08.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 09.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 11.mid" }
+            ],
+            "transition": { "filename" : "Blues Classics/110 Cold Shock/Open Hat Fills/Open Hat Fill 12.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "Blues Classics/110 Cold Shock/Grooves/Cold Ride.mid" },
+            "fills": [
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 01.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 02.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 05.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 06.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 07.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 08.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 09.mid" },
+                { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 11.mid" }
+            ],
+            "transition": { "filename" : "Blues Classics/110 Cold Shock/Ride Fills/Ride Fill 12.mid" }
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "2-Feel",
+    "group": "Jazz",
+    "bpm" : 135,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "135 2-Feel/Intros/2-Feel Intro Fill 2.mid" },
+    "ending": { "filename" : "135 2-Feel/Outros/2-Feel Outro Fill 3.mid" },
+    "parts": [
+        {
+            "name": "2-Feel A",
+            "midi_file" : { "filename" : "135 2-Feel/Grooves/2-Feel Hat A1.mid" },
+            "fills": [
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 1.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 2.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 3.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 4.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 5.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 6.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 7.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel A Fill 8.mid" }
+            ],
+            "transition": { "filename" : "135 2-Feel/Fills/2-Feel A Fill 9.mid" }
+        },
+        {
+            "name": "2-Feel B",
+            "midi_file" : { "filename" : "135 2-Feel/Grooves/2-Feel B Ride SN 1.mid" },
+            "fills": [
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 01.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 02.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 03.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 04.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 05.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 06.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 07.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 08.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 09.mid" },
+                { "filename" : "135 2-Feel/Fills/2-Feel B Fill 11.mid" }
+            ],
+            "transition": { "filename" : "135 2-Feel/Fills/2-Feel B Fill 10.mid" }
+        }
+    ]
+}

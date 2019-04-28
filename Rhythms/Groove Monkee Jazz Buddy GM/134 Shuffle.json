@@ -1,0 +1,40 @@
+{
+    "name": "Shuffle",
+    "group": "Jazz",
+    "bpm" : 134,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "134 Shuffle/Intros/Shuffle Intro Fill 3.mid" },
+    "ending": { "filename" : "134 Shuffle/Outros/Shuffle Outro Fill.mid" },
+    "parts": [
+        {
+            "name": "Shuffle A",
+            "midi_file" : { "filename" : "134 Shuffle/Grooves/Shuffle A.mid" },
+            "fills": [
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 1.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 2.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 3.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 4.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 5.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 6.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 7.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle A Fill 8.mid" }
+            ],
+            "transition": { "filename" : "134 Shuffle/Fills/Shuffle A Fill 9.mid" }
+        },
+        {
+            "name": "Shuffle B",
+            "midi_file" : { "filename" : "134 Shuffle/Grooves/Shuffle B.mid" },
+            "fills": [
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 1.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 2.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 3.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 4.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 5.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 6.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 7.mid" },
+                { "filename" : "134 Shuffle/Fills/Shuffle B Fill 8.mid" }
+            ],
+            "transition": { "filename" : "134 Shuffle/Fills/Shuffle B Fill 9.mid" }
+        }
+    ]
+}
