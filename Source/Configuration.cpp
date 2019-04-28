@@ -75,12 +75,15 @@ bool Configuration::parseConfiguration(const String& filename)
 
 bool Configuration::addDescription(const File& descriptionFile)
 {
+    spdlog::info("Reading beat information from \"{}\"", descriptionFile.getFullPathName());
     BeatDescription newDescription { descriptionFile };
+
     if (!newDescription.isEmpty())
     {
-        beatDescriptions.push_back(std::move(descriptionFile));
+        beatDescriptions.push_back(std::move(newDescription));
+        return true;
     }
-    return !newDescription.isEmpty();
+    return false;
 }
 
 bool Configuration::saveConfiguration(const String& filename)
