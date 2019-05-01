@@ -1,0 +1,30 @@
+{
+    "name": "Rock Ballad Free",
+    "group": "Rock",
+    "bpm" : 100,
+    "quarters_per_bar": 4,
+    "parts": [
+        {
+            "name": "Verse",
+            "midi_file" : { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick.mid" },
+            "fills": [
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 1.mid" },
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 2.mid" },
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 3.mid" },
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 4.mid" }
+            ],
+            "transition": { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 1.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick.mid", "replace_notes": [[42, 51]] },
+            "fills": [
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 1.mid", "replace_notes": [[42, 51]] },
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 2.mid", "replace_notes": [[42, 51]] },
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 3.mid", "replace_notes": [[42, 51]] },
+                { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 4.mid", "replace_notes": [[42, 51]] }
+            ],
+            "transition": { "filename" : "Rock Essentials 1/Rock Ballad/100 Rock 04 8ths Stick Fill 1.mid", "replace_notes": [[42, 51]] }
+        }
+    ]
+}
