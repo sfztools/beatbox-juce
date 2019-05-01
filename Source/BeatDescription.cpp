@@ -114,6 +114,7 @@ std::shared_ptr<BeatSequence> BeatDescription::readSequence(const var& fileVar, 
     const auto filename = fileVar.getProperty("filename", "").toString();
     const int numberOfBars = fileVar.getProperty("bars", this->quartersPerBar);
     const int ignoreBars = fileVar.getProperty("ignore_bars", 0);
+    const auto noteReplacements = fileVar.getProperty("replace_notes", var());
     
     if (filename == "")
         return {};
@@ -135,7 +136,31 @@ std::shared_ptr<BeatSequence> BeatDescription::readSequence(const var& fileVar, 
 
     spdlog::debug("Reading MIDI file \"{}\"", filename);
     
-    return std::make_shared<BeatSequence>(midiFile, numberOfBars, ignoreBars);
+    auto returnedSequence = std::make_shared<BeatSequence>(midiFile, numberOfBars, ignoreBars);
+    if (noteReplacements.size() > 0)
+    {
+        for (auto& replacement: *noteReplacements.getArray())
+        {
+            if (replacement.size() != 2)
+            {
+                spdlog::error("Error with the replacement notes for file \"{}\": replacements should be arrays of value pairs", filename);
+                continue;
+            }
+
+            auto from = replacement.getArray()->getUnchecked(0);
+            auto to = replacement.getArray()->getUnchecked(1);
+
+            if (!from.isInt() || !to.isInt())
+            {
+                spdlog::error("Error with the replacement notes for file \"{}\": replacements should be pairs of int", filename);
+                continue;
+            }
+
+            returnedSequence->replaceNote(from, to);
+        }
+    }
+    
+    return returnedSequence;
 }
 
 bool BeatDescription::validateVarFile(const var& fileVar)

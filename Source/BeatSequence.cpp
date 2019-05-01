@@ -150,3 +150,20 @@ BeatSequence::BeatSequence(const MidiFile& midiFile, int numberOfBars, int ignor
         }
     } // Loop on tracks
 }
+
+void BeatSequence::replaceNote(int from, int to)
+{
+    auto noteIterator = sequence.cbegin();
+    while (noteIterator != sequence.cend())
+    {
+        if (noteIterator->getNoteNumber() == from)
+        {
+            sequence.emplace(to, noteIterator->getChannel(), noteIterator->getVelocity(), noteIterator->getTimeStamp(), noteIterator->getNoteOffDelay());
+            noteIterator = sequence.erase(noteIterator);
+        }
+        else
+        {
+            noteIterator++;
+        }
+    }
+}

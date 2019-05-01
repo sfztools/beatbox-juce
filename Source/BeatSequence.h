@@ -55,6 +55,7 @@ public:
 
     double getTimeStamp() const noexcept { return timestamp; }
     double getNoteOffTimeStamp() const noexcept { return timestamp + noteOffDelay; }
+    double getNoteOffDelay() const noexcept { return noteOffDelay; }
     int getNoteNumber() const noexcept { return noteNumber; }
     int getChannel() const noexcept { return channel; }
     uint8 getVelocity() const noexcept { return velocity; }
@@ -125,6 +126,7 @@ public:
 
     void addEvent(MidiNote&& message);
     void addEvent(const MidiNote& message);
+    void replaceNote(int from, int to);
     double getLastBarTime() const noexcept;
 
 #ifdef DEBUG
