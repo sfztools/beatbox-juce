@@ -96,9 +96,9 @@ BeatSequence::BeatSequence(const MidiFile& midiFile, int numberOfBars, int ignor
         spdlog::error("Empty MIDI file \"{}\"");
         return;
     }
-    numberOfBars = std::min(numberOfBars, fileNumberOfBars);
+    if (numberOfBars == 0)
+        numberOfBars = fileNumberOfBars - ignoreBars;
 
-    BeatSequence returnedSequence;
     const auto deltaTime = ignoreBars * ticksPerQuarter * quartersPerBar;
     for (auto trackIdx = 0; trackIdx < midiFile.getNumTracks(); ++trackIdx)
     {
@@ -130,7 +130,7 @@ BeatSequence::BeatSequence(const MidiFile& midiFile, int numberOfBars, int ignor
 
         // Check notes within the sequence
         auto currentIdx = track->getNextIndexAtTime(deltaTime);
-        const auto endTime = deltaTime + numberOfBars * ticksPerQuarter * quartersPerBar;
+        const double endTime = deltaTime + numberOfBars * ticksPerQuarter * quartersPerBar;
         while (currentIdx < track->getNumEvents() && track->getEventTime(currentIdx) < endTime)
         {
             auto midiEvent = track->getEventPointer(currentIdx);

@@ -27,6 +27,23 @@ bool operator==(const SequenceTimestamps& lhs, const SequenceTimestamps& rhs)
     return equalElements(lhs.noteOnTimeStamps, rhs.noteOnTimeStamps) && equalElements(lhs.noteOffTimeStamps, rhs.noteOffTimeStamps);
 }
 
+bool compareApprox(const std::vector<double>& lhs, const std::vector<double>& rhs, double eps=0.01)
+{
+    if (lhs.size() != rhs.size())
+        return false;
+    
+    bool allEqual { true };
+    for (int i = 0; i < lhs.size() && i < rhs.size(); ++i)
+    {
+        if (lhs[i] != Approx(rhs[i]).epsilon(eps))
+        {
+            std::cout << lhs[i] << " != " << rhs[i] << std::endl;
+            allEqual = false;
+        }
+    }
+    return allEqual;
+}
+
 SequenceTimestamps extractTimestamps(BeatSequence& sequence)
 {
     std::vector<double> noteOns;
@@ -128,8 +145,8 @@ TEST_CASE("BeatSequence sorting", "[BeatSequence]")
             shuffledSequence.addEvent({noteNumber, channel, velocity, timestamp, noteDuration});    
         
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(shuffledSequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps );
     }
 }
 
@@ -225,8 +242,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         
         auto testSequence = sequence.getEventsWithin(1.0, 1.5);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testSequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 
     SECTION("getEventsWithin 2")
@@ -239,8 +256,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         
         auto testSequence = sequence.getEventsWithin(0.999, 1.5);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testSequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 
     SECTION("getEventsWithin 3")
@@ -253,8 +270,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         
         auto testSequence = sequence.getEventsWithin(1.0, 1.6);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testSequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 
     SECTION("Extract 1st bar with 0.0")
@@ -267,8 +284,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         
         auto testBar = sequence.getBarAtTime(0.0);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testBar);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 
     SECTION("Extract 1st bar with 0.999")
@@ -280,8 +297,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         auto [refNoteOnTimestamps, refNoteOffTimestamps] = extractTimestamps(refSequence);        
         auto testBar = sequence.getBarAtTime(0.999);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testBar);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 
     SECTION("Extract 2nd bar with 1.0")
@@ -293,8 +310,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         auto [refNoteOnTimestamps, refNoteOffTimestamps] = extractTimestamps(refSequence);        
         auto testBar = sequence.getBarAtTime(1.2);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testBar);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 
     SECTION("Extract all when there are 4 quarters per bar")
@@ -303,8 +320,8 @@ TEST_CASE("getBarAtTimes and getEventsWithin", "[BeatSequence]")
         auto [refNoteOnTimestamps, refNoteOffTimestamps] = extractTimestamps(sequence);        
         auto testBar = sequence.getBarAtTime(1.0);
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(*testBar);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) ); 
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps ); 
     }
 }
 
@@ -314,7 +331,7 @@ TEST_CASE("Build from Midi file", "[BeatSequence]")
     const int noteNumber = 1;
     const int channel = 1;
     const uint8 velocity = 63;
-    const int ticksPerQuarterNote = 1000;
+    const int ticksPerQuarterNote = 240;
 
     SECTION("Empty midi file")
     {
@@ -331,23 +348,26 @@ TEST_CASE("Build from Midi file", "[BeatSequence]")
         MidiFile midiFile;
         midiFile.setTicksPerQuarterNote(ticksPerQuarterNote);
         MidiMessageSequence track;
-        std::vector<double> refNoteOnTimestamps = {0.0, 0.1, 0.5, 0.99, 1.0, 1.2,  1.5, 1.999, 2.0, 2.5, 3.1, 3.7};
+        std::vector<double> refNoteOnTimestamps = {0.0, 0.1, 0.5, 0.99, 1.1, 1.3,  1.5, 1.999, 2.3, 2.5, 3.1, 3.7};
         std::vector<double> refNoteOffTimestamps = refNoteOnTimestamps;
         std::for_each(refNoteOffTimestamps.begin(), refNoteOffTimestamps.end(), [noteDuration](double& x){ x += noteDuration; });
 
         for (auto timestamp: refNoteOnTimestamps)
         {
-            const double noteOnTicks = std::round(timestamp * ticksPerQuarterNote);
-            const double noteOffTicks = std::round((timestamp + noteDuration) * ticksPerQuarterNote);
+            const double noteOnTicks = timestamp * ticksPerQuarterNote;
+            const double noteOffTicks = (timestamp + noteDuration) * ticksPerQuarterNote;
             track.addEvent(MidiMessage::noteOn(channel, noteNumber, velocity), noteOnTicks);
             track.addEvent(MidiMessage::noteOff(channel, noteNumber), noteOffTicks);
-        }
+        }        
+        track.updateMatchedPairs();
+        track.addEvent(MidiMessage::timeSignatureMetaEvent(1, 4));
         midiFile.addTrack(track);
         BeatSequence sequence { midiFile };
 
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(sequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
+        REQUIRE( sequence.getQuartersPerBar() == 1 );
+        REQUIRE( compareApprox(noteOnTimestamps, refNoteOnTimestamps) );
+        REQUIRE( compareApprox(noteOffTimestamps, refNoteOffTimestamps) );
     }
 
     SECTION("numberOfBars and ignoreBars")
@@ -355,7 +375,7 @@ TEST_CASE("Build from Midi file", "[BeatSequence]")
         MidiFile midiFile;
         midiFile.setTicksPerQuarterNote(ticksPerQuarterNote);
         MidiMessageSequence track;
-        std::vector<double> insertedNoteOnTimestamps = {0.0, 0.1, 0.5, 0.99, 1.0, 1.2,  1.5, 1.999, 2.0, 2.5, 3.1, 3.7};
+        std::vector<double> insertedNoteOnTimestamps = {0.0, 0.1, 0.5, 0.99, 1.1, 1.3,  1.5, 1.999, 2.3, 2.5, 3.1, 3.7};
         std::vector<double> insertedNoteOffTimestamps = insertedNoteOnTimestamps;
 
         std::for_each(insertedNoteOffTimestamps.begin(), insertedNoteOffTimestamps.end(), [noteDuration](double& x){ x += noteDuration; });
@@ -367,17 +387,19 @@ TEST_CASE("Build from Midi file", "[BeatSequence]")
             track.addEvent(MidiMessage::noteOn(channel, noteNumber, velocity), noteOnTicks);
             track.addEvent(MidiMessage::noteOff(channel, noteNumber), noteOffTicks);
         }
+        track.updateMatchedPairs();
+        track.addEvent(MidiMessage::timeSignatureMetaEvent(1, 4));
         midiFile.addTrack(track);
 
-        std::vector<double> refNoteOnTimestamps = {0.99, 1.0, 1.2,  1.5}; // keeps the 0.99 but ignores the 1.999
+        std::vector<double> refNoteOnTimestamps = {0.0, 0.1, 0.3,  0.5}; // keeps the 0.99 but ignores the 1.999
         std::vector<double> refNoteOffTimestamps = refNoteOnTimestamps;
         std::for_each(refNoteOffTimestamps.begin(), refNoteOffTimestamps.end(), [noteDuration](double& x){ x += noteDuration; });
 
         BeatSequence sequence(midiFile, 1, 1);
 
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(sequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
+        REQUIRE( compareApprox(noteOnTimestamps, refNoteOnTimestamps) );
+        REQUIRE( compareApprox(noteOffTimestamps, refNoteOffTimestamps) );
     }
 }
 
@@ -401,9 +423,9 @@ TEST_CASE("Use note replacements", "[BeatSequence]")
         }
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(sequence);
         auto noteNumbers = extractNotes(sequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
-        REQUIRE( equalElements(noteNumbers, refNoteNumbers) );
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps );
+        REQUIRE( noteNumbers == refNoteNumbers );
     }
 
     SECTION("Replace an inexistant note")
@@ -420,9 +442,9 @@ TEST_CASE("Use note replacements", "[BeatSequence]")
         }
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(sequence);
         auto noteNumbers = extractNotes(sequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
-        REQUIRE( equalElements(noteNumbers, refNoteNumbers) );
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps );
+        REQUIRE( noteNumbers == refNoteNumbers );
     }
 
     SECTION("Replace 1 note")
@@ -440,9 +462,9 @@ TEST_CASE("Use note replacements", "[BeatSequence]")
         std::vector<int> refReplacedNoteNumbers {40, 31, 32, 33, 34, 35, 40, 31, 32, 33, 34, 35};
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(sequence);
         auto noteNumbers = extractNotes(sequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
-        REQUIRE( equalElements(noteNumbers, refReplacedNoteNumbers) );
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps );
+        REQUIRE( noteNumbers == refReplacedNoteNumbers );
     }
 
     SECTION("Replace 2 notes")
@@ -460,9 +482,9 @@ TEST_CASE("Use note replacements", "[BeatSequence]")
         std::vector<int> refReplacedNoteNumbers {40, 31, 32, 43, 34, 35, 40, 31, 32, 43, 34, 35};
         auto [noteOnTimestamps, noteOffTimestamps] = extractTimestamps(sequence);
         auto noteNumbers = extractNotes(sequence);
-        REQUIRE( equalElements(noteOnTimestamps, refNoteOnTimestamps) );
-        REQUIRE( equalElements(noteOffTimestamps, refNoteOffTimestamps) );
-        REQUIRE( equalElements(noteNumbers, refReplacedNoteNumbers) );
+        REQUIRE( noteOnTimestamps == refNoteOnTimestamps );
+        REQUIRE( noteOffTimestamps == refNoteOffTimestamps );
+        REQUIRE( noteNumbers == refReplacedNoteNumbers );
     }
 }
 
