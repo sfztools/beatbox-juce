@@ -111,7 +111,7 @@ You have a header with the general information about the file, among which:
 - `group`: the style, or any group you may wish this file to be in
 - `bpm`: the basic BPM for the beat. This will override the BPM registered in the MIDI files.
 - `quarters_per_bar`: the number of quarter notes per bar. Note that 6/8 is 3 quarters. I may make this more precise in the future.
-- `intro` and `ending`: both of these are optional. If they are present, they should contain a sub-dictionary with a mandatory `filename` field, which is the MIDI file name in relative or absolute path, and optional fields `bars` and `ignore_bars` that indicate the loop length within the MIDI file and how many bars to ignore at the beginning.
+- `intro` and `ending`: both of these are optional. If they are present, they should contain a sub-dictionary with a mandatory `filename` field, which is the MIDI file name in relative or absolute path, and optional fields `bars` and `ignore_bars` that indicate the loop length within the MIDI file and how many bars to ignore at the beginning. You can also add an optional `replace_notes` field that contains an array of pairs (e.g. `[[37, 41]]` or `[[37, 41], [42, 53]]`).
 
 Following the header, there's an array named `parts`.
 Each part contains:
