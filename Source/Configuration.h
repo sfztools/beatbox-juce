@@ -59,13 +59,15 @@ public:
     auto getAccentCC() const { return accentCC; }
     auto getAccentDuration() const { return accentDuration; }
     bool useRandomFills() const { return randomFills; }
+    bool syncTempoToHost() const { return syncToHost; }
 
     void setInputChannel(int channel);
-      void setOutputChannel(int channel);
-      void setMainCC(int CC);
-      void setAccentCC(int CC);
-      void setAccentDuration(double duration);
-      void setRandomFills(bool useRandom);
+    void setOutputChannel(int channel);
+    void setMainCC(int CC);
+    void setAccentCC(int CC);
+    void setAccentDuration(double duration);
+    void setRandomFills(bool useRandom);
+    void setSyncToHost(bool sync);
 
     void loadBeatDescription(int beatIndex);
     void loadSfzPatch(int sfzFileIndex);
@@ -79,6 +81,7 @@ public:
     static constexpr int defaultMainCC { 68 };
     static constexpr int defaultAccentCC { 67 };
     static constexpr bool defaultRandomFills { true };
+    static constexpr bool defaultSyncToHost { true };
 private:
     RhythmBoxAudioProcessor& processor;
 
@@ -88,6 +91,7 @@ private:
     int outputChannel { defaultOutputChannel };
     double accentDuration { defaultAccentDuration };
     bool randomFills { defaultRandomFills };
+    bool syncToHost { defaultSyncToHost };
 
     // Current beat description
     int beatIndex { -1 };

@@ -256,6 +256,10 @@ ConfigBox::ConfigBox(Configuration& config)
     addAndMakeVisible(randomFillsButton);
     randomFillsButton.setToggleState(config.useRandomFills(), dontSendNotification);
     randomFillsButton.onStateChange = [&] () { config.setRandomFills(randomFillsButton.getToggleState()); };
+
+    addAndMakeVisible(syncToHostButton);
+    syncToHostButton.setToggleState(config.syncTempoToHost(), dontSendNotification);
+    syncToHostButton.onStateChange = [&] () { config.setSyncToHost(syncToHostButton.getToggleState()); };
 }
 
 void ConfigBox::paint(Graphics & g)
@@ -276,4 +280,5 @@ void ConfigBox::paint(Graphics & g)
     lambdaTextComponent(firstColumn, outputChannelBox, outputChannelLabel);
 
     randomFillsButton.setBounds(secondColumn.removeFromTop(20));
+    syncToHostButton.setBounds(secondColumn.removeFromTop(20));
 }

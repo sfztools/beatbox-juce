@@ -50,6 +50,7 @@ bool Configuration::parseConfiguration(const String& filename)
     setAccentCC( originalConfig.getProperty("accent_cc", defaultAccentCC) );
     setAccentDuration( originalConfig.getProperty("accent_duration", defaultAccentDuration) );
     setRandomFills( originalConfig.getProperty("random_fills", defaultRandomFills) );    
+    setSyncToHost( originalConfig.getProperty("sync_to_host", defaultSyncToHost) );    
     
     if (originalConfig.hasProperty("rhythms"))
     {
@@ -95,6 +96,7 @@ bool Configuration::saveConfiguration(const String& filename)
     configToSave->setProperty("main_cc", mainCC);
     configToSave->setProperty("accent_cc", accentCC);
     configToSave->setProperty("random_fills", randomFills);
+    configToSave->setProperty("sync_to_host", syncToHost);
 
     var beatsToSave;
     beatsToSave.resize(0); // Empty array
@@ -151,6 +153,11 @@ void Configuration::setInputChannel(int channel)
         return;
     }
     inputChannel = channel;
+}
+
+void Configuration::setSyncToHost(bool sync)
+{
+    syncToHost = sync;
 }
 
 void Configuration::setRandomFills(bool useRandom)

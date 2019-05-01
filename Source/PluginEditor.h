@@ -47,6 +47,7 @@ private:
     Label outputChannelLabel { "Output Channel Label", "Output Channel" };
     ComboBox outputChannelBox;
     ToggleButton randomFillsButton { "Use random fills" };
+    ToggleButton syncToHostButton { "Sync tempo to host" };
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConfigBox)
 };
 

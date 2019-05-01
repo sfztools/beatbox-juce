@@ -141,17 +141,26 @@ private:
             return def;
     }
 
-    float getTempoParameter() const
-    { 
+    float getTempoParameter()
+    {
+        auto currentTempo = checkNullWithDefault(tempo, defaultTempo);
+        if (!config.syncTempoToHost())
+            return currentTempo;
+
         auto head = getPlayHead();
         if (head == nullptr)
-            return checkNullWithDefault(tempo, defaultTempo);
+            return currentTempo;
         
         AudioPlayHead::CurrentPositionInfo positionInfo;
         head->getCurrentPosition(positionInfo);
         if (positionInfo.bpm > 0)
         {
-            return static_cast<float>(positionInfo.bpm);
+            auto hostTempo = static_cast<float>(positionInfo.bpm);
+            if (currentTempo != hostTempo)
+            {
+                parameters.getParameter("tempo")->setValueNotifyingHost(hostTempo/300.0f);
+            }                
+            return hostTempo;
         }
         
         return checkNullWithDefault(tempo, defaultTempo);
