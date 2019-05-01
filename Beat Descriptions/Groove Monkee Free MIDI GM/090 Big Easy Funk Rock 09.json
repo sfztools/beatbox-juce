@@ -1,0 +1,28 @@
+{
+    "name": "Big Easy 09 Free",
+    "group": "Funk",
+    "bpm": 90,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Big Easy/Song 09 Funk Rock/090 S01 Intro.mid", "bars": 1, "ignore_bars": 7 },
+    "ending": { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Outro.mid", "bars": 2, "ignore_bars": 6 },
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse F3.mid", "bars": 4, "ignore_bars": 2 },
+            "fills": [
+                { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse F3.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse Fill 04.mid" }
+            ],
+            "transition": { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse Fill 04.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse Ride.mid", "bars": 4, "ignore_bars": 2 },
+            "fills": [
+                { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse F3.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse Fill 04.mid" }
+            ],
+            "transition": { "filename" : "Big Easy/Song 09 Funk Rock/090 S09 Verse Fill 04.mid" }
+        }
+    ]
+}

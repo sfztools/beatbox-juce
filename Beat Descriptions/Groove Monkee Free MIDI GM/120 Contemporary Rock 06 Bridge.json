@@ -1,0 +1,46 @@
+{
+    "name": "Contemporary Rock 06 Bridge Free",
+    "group": "Rock",
+    "bpm" : 120,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Contemporary Rock/Song 06 120/Intro Fills/S06 Intro Stick On 2 Fill 3.mid"},
+    "ending": { "filename" : "Contemporary Rock/Song 06 120/Outro Fills/S06 Outro Crashes Ritard Fill 5.mid"},
+    "parts": [
+        {
+            "name": "Verse",
+            "midi_file" : { "filename" : "Contemporary Rock/Song 06 120/Grooves/S06 Verse 8ths.mid" },
+            "fills": [
+                { "filename" : "Contemporary Rock/Song 06 120/Verse Fills/S06 Verse BB Fill 1.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Verse Fills/S06 Verse BB Fill 2.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Verse Fills/S06 Verse BB Fill 3.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Verse Fills/S06 Verse BB Fill 4.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Verse Fills/S06 Verse BB Fill 6.mid" }
+            ],
+            "transition": { "filename" : "Contemporary Rock/Song 06 120/Verse Fills/S06 Verse BB Fill 5.mid" }
+        },
+        {
+            "name": "Bridge",
+            "midi_file" : { "filename" : "Contemporary Rock/Song 06 120/Grooves/S06 Bridge HT Ride.mid" },
+            "fills": [
+                { "filename" : "Contemporary Rock/Song 06 120/Bridge Fills/S06 Bridge HT Ride Fill 1.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Bridge Fills/S06 Bridge HT Ride Fill 2.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Bridge Fills/S06 Bridge HT Ride Fill 3.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Bridge Fills/S06 Bridge HT Ride Fill 4.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Bridge Fills/S06 Bridge HT Ride Fill 6.mid" }
+            ],
+            "transition": { "filename" : "Contemporary Rock/Song 06 120/Bridge Fills/S06 Bridge HT Ride Fill 5.mid" }
+        },
+        {
+            "name": "Chorus",
+            "midi_file" : { "filename" : "Contemporary Rock/Song 06 120/Grooves/S06 Chorus OH 8th.mid" },
+            "fills": [
+                { "filename" : "Contemporary Rock/Song 06 120/Chorus Fills/S06 Chorus BB Fill 1.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Chorus Fills/S06 Chorus BB Fill 2.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Chorus Fills/S06 Chorus BB Fill 3.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Chorus Fills/S06 Chorus BB Fill 4.mid" },
+                { "filename" : "Contemporary Rock/Song 06 120/Chorus Fills/S06 Chorus BB Fill 6.mid" }
+            ],
+            "transition": { "filename" : "Contemporary Rock/Song 06 120/Chorus Fills/S06 Chorus BB Fill 5.mid" }
+        }
+    ]
+}

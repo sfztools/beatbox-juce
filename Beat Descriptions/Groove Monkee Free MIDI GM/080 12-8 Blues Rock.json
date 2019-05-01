@@ -1,0 +1,17 @@
+{
+    "name": "12-8 Blues Rock Free",
+    "group": "Blues",
+    "bpm" : 80,
+    "quarters_per_bar": 4,
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "Blues Rock/Song 04 080/080 12-8 S4 Verse 1 F3.mid", "bars": 4, "ignore_bars": 2 },
+            "fills": [
+                { "filename" : "Blues Rock/Song 04 080/080 12-8 S4 Verse 1 F3.mid", "bars": 1, "ignore_bars": 11 },
+                { "filename" : "Blues Rock/Song 04 080/080 12-8 S4 Verse 1 Fill 10.mid" }
+            ],
+            "transition": { "filename" : "Blues Rock/Song 04 080/080 12-8 S4 Verse 1 Fill 10.mid" }
+        }
+    ]
+}

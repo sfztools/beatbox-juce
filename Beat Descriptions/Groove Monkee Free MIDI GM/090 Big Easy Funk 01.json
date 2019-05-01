@@ -1,0 +1,27 @@
+{
+    "name": "Big Easy 01 Free",
+    "group": "Funk",
+    "bpm": 90,
+    "quarters_per_bar": 4,
+    "intro": { "filename" : "Big Easy/Song 01 Funk/090 S01 Intro.mid", "bars": 1, "ignore_bars": 7 },
+    "ending": { "filename" : "Big Easy/Song 01 Funk/090 S01 Intro.mid", "bars": 1, "ignore_bars": 7 },
+    "parts": [
+        {
+            "name": "Hat",
+            "midi_file" : { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus F5.mid", "bars": 4, "ignore_bars": 2 },
+            "fills": [
+                { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus F5.mid", "bars": 1, "ignore_bars": 7 },
+                { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus Fill 2.mid" }
+            ],
+            "transition": { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus Fill 2.mid" }
+        },
+        {
+            "name": "Ride",
+            "midi_file" : { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus Ride.mid", "bars": 4, "ignore_bars": 2 },
+            "fills": [
+                { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus Ride Fill 2.mid" }
+            ],
+            "transition": { "filename" : "Big Easy/Song 01 Funk/090 S01 Chorus Ride Fill 2.mid" }
+        }
+    ]
+}
