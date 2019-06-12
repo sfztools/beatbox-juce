@@ -1,0 +1,53 @@
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - new_post
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - setup.sh
+  - assets/css/style.css
+  - TODO.md
+  - yarn.lock
+  - yarn-error.log
+
+plugins:
+  - jekyll-sitemap
+  - jemoji
+
+url: "https://sfztools.github.io/rhythmbox"
+
+spdx_license_id: "GPL-3.0-or-later"
+
+organization:
+  name: "Rhythmbox"
+  url: "https://github.com/sfztools"
+
+authors:
+  content: "PaulFd"
+  web: "RedTide"
+
+google:
+  analytics_code:
+  cse_code:
+
+disqus_shortname:

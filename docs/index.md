@@ -1,4 +1,10 @@
-# RhythmBox
+---
+title: "RhythmBox"
+lang: "en"
+layout: "home"
+date_fmt: "%B %d, %Y"
+---
+<div markdown="1" class="jumbotron p-4 mb-3">
 
 This application is a live drummer that you can control using buttons or MIDI CC
 with at least 1 controller, as an arranger or a [BeatBuddy][] pedal would.
@@ -17,6 +23,11 @@ I'll put up some forum or sharing platform at some point.
 [JSON files]: {{ "/beat" | relative_url }}
 [JUCE]: https://juce.com/
 [SFZero]: http://stevefolta.github.io/SFZero/
+
+[![Travis](https://img.shields.io/travis/com/sfztools/rhythmbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/rhythmbox)
+[![AppVeyor](https://img.shields.io/appveyor/ci/redtide/rhythmbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/rhythmbox)
+
+</div>
 
 ## Installation
 
@@ -67,3 +78,7 @@ There are many updates to the original codebase.
 The one I'm using has been improved by Leo Olivers and cleaned up by [MatkatMusic](https://github.com/matkatmusic).
 
 JUCE is owned by [ROLI](https://roli.com/).
+
+## Latest News
+
+{% include post.html %}
