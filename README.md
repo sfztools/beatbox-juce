@@ -14,7 +14,7 @@ Contributions and comments are welcome, as well as beat description files.
 I'll put up some forum or sharing platform at some point.
 
 [BeatBuddy]: https://singularsound.com/
-[JSON files]: {{ "/beat" | relative_url }}
+[JSON files]: https://sfztools.github.io/rhythmbox/drum-beat-description-files
 [JUCE]: https://juce.com/
 [SFZero]: http://stevefolta.github.io/SFZero/
 
@@ -26,7 +26,7 @@ along with Raspberry Pi binaries.
 See the [build documentation page][] about how to build the application
 from the source code.
 
-[build documentation page]: {{ "/build" | relative_url }}
+[build documentation page]: https://sfztools.github.io/rhythmbox/build
 [releases page]: https://github.com/paulfd/rhythmbox/releases
 
 ## Usage
@@ -48,13 +48,13 @@ After this, the behavior is:
 - a long tap transitions into the next part.
 - 2 taps trigger the ending.
 
-[beat description]: {{ "/drum-beat-description-files" | relative_url }}
-[Sfz file]: {{ "drum-sfz-files" | relative_url }}
+[beat description]: https://sfztools.github.io/rhythmbox/drum-beat-description-files
+[Sfz file]: https://sfztools.github.io/rhythmbox/drum-sfz-files
 
 ## Contact and contributions
 
-Feel free to post an issue, or contact me by email at paulfd@outlook.fr if you need.
-Any contribution is welcome.
+Feel free to post an issue, or contact me by [email](mailto:paulfd@outlook.fr)
+if you need. Any contribution is welcome.
 There are many things to improve in the code and most notably in the GUI
 which is terrible but I'm very bad at this.
 However the best is probably to build beat descriptions/sfz files
@@ -64,6 +64,7 @@ and share the love! :)
 
 The original SFZero code is from [Steve Folta](http://stevefolta.github.io/SFZero/).
 There are many updates to the original codebase.
-The one I'm using has been improved by Leo Olivers and cleaned up by [MatkatMusic](https://github.com/matkatmusic).
+The one I'm using has been improved by Leo Olivers
+and cleaned up by [MatkatMusic](https://github.com/matkatmusic).
 
 JUCE is owned by [ROLI](https://roli.com/).
