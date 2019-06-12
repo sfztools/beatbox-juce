@@ -1,6 +1,6 @@
 {
-    "name": "SFZTools",
-    "short_name": "SFZTools",
+    "name": "RhythmBox",
+    "short_name": "RhythmBox",
     "icons": [
         {
             "src": "/assets/ico/android-chrome-192x192.png",
@@ -8,13 +8,13 @@
             "type": "image/png"
         },
         {
-            "src": "/assets/ico/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "/assets/ico/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "https://sfztools.github.io",
+    "start_url": "https://sfztools.github.io/rhythmbox/",
     "display": "standalone"
 }
