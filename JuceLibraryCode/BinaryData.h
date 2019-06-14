@@ -9,7 +9,7 @@
 namespace BinaryData
 {
     extern const char*   LICENSE;
-    const int            LICENSESize = 1174;
+    const int            LICENSESize = 1152;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 1;

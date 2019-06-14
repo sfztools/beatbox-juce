@@ -6,7 +6,8 @@
               pluginManufacturerCode="PFE" aaxIdentifier="cc.ferrand.rhythmbox"
               pluginVSTNumMidiInputs="1" pluginVSTNumMidiOutputs="1" cppLanguageStandard="latest"
               version="1.0.0" companyCopyright="(c) 2019 Paul Ferrand" companyWebsite="www.ferrand.cc"
-              companyEmail="paulfd@outlook.fr" reportAppUsage="0" displaySplashScreen="0">
+              companyEmail="paulfd@outlook.fr" reportAppUsage="0" displaySplashScreen="0"
+              headerPath="../../Source">
   <MAINGROUP id="SI9max" name="RhythmBox">
     <GROUP id="{24A5363E-529F-6A57-5537-570E41BF2396}" name="Source">
       <GROUP id="{12C14BAB-6F84-3C8A-0FE5-0901EE8DD990}" name="sfzero">
@@ -188,7 +189,7 @@
   </MODULES>
   <LIVE_SETTINGS>
     <WINDOWS/>
-    <LINUX/>
+    <LINUX headerPath="../../Source"/>
   </LIVE_SETTINGS>
   <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"
                JUCE_JACK="1"/>

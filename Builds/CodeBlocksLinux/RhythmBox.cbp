@@ -41,6 +41,7 @@
           <Add directory="."/>
           <Add directory="../../JuceLibraryCode"/>
           <Add directory="$(HOME)/JUCE/modules"/>
+          <Add directory="../../Source"/>
           <Add directory="/usr/include/freetype2"/>
         </Compiler>
         <Linker>
@@ -85,6 +86,7 @@
           <Add directory="."/>
           <Add directory="../../JuceLibraryCode"/>
           <Add directory="$(HOME)/JUCE/modules"/>
+          <Add directory="../../Source"/>
           <Add directory="/usr/include/freetype2"/>
         </Compiler>
         <Linker>
@@ -129,6 +131,7 @@
           <Add directory="."/>
           <Add directory="../../JuceLibraryCode"/>
           <Add directory="$(HOME)/JUCE/modules"/>
+          <Add directory="../../Source"/>
           <Add directory="/usr/include/freetype2"/>
         </Compiler>
         <Linker>
@@ -172,6 +175,7 @@
           <Add directory="."/>
           <Add directory="../../JuceLibraryCode"/>
           <Add directory="$(HOME)/JUCE/modules"/>
+          <Add directory="../../Source"/>
           <Add directory="/usr/include/freetype2"/>
         </Compiler>
         <Linker>
