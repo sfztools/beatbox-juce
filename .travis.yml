@@ -1,0 +1,59 @@
+language: cpp
+matrix:
+  include:
+  - os: linux
+    dist: xenial
+    addons:
+      apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - gcc-8
+        - g++-8
+    env:
+    - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+  - os: osx
+    osx_image: xcode10.1
+
+before_install:
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo add-apt-repository ppa:webkit-team/ppa -y; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update -q; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100; fi
+- if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew update; fi
+- wget -c -nv "https://d30pueezughrda.cloudfront.net/juce/juce-5.4.3-$TRAVIS_OS_NAME.zip"
+- unzip ./juce-5.4.3-$TRAVIS_OS_NAME.zip -d $HOME
+
+install:
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get -y install libasound2-dev libjack-jackd2-dev libxinerama-dev libgl1-mesa-dev libgtk-3-dev libwebkit2gtk-4.0-37 libwebkit2gtk-4.0-dev; fi
+
+script:
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then gcc --version; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then cd "./Builds/LinuxMakefile"; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then make -j$(nproc) CONFIG=Release; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cd "./Builds/MacOSX"; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then xcodebuild -project rhythmbox.xcodeproj -alltargets -configuration Release build; fi
+- cd ./../../
+
+after_success:
+- export VERSION=$(git describe --tags)
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DEPLOYFILE=rhythmbox-$VERSION-x86_64.AppImage; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget -c -nv "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then chmod +x linuxdeploy-x86_64.AppImage; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then for size in 16 32 48 128 256; do dirname="RhythmBox/usr/share/icons/hicolor/${size}x${size}/apps"; mkdir -p $dirname; cp ./resources/icons/icon_${size}px.png ./${dirname}/rhythmbox.png; done; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=RhythmBox --desktop-file=./resources/linux/rhythmbox.desktop --executable=./Builds/LinuxMakefile/build/rhythmbox --output=appimage; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then export DEPLOYFILE=rhythmbox-$VERSION.dmg; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then mkdir ./output; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp -r ./Builds/MacOSX/build/Release/* ./output/; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp ./resources/icons/icon.icns ./output/rhythmbox.app/Contents/Resources/; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil create /tmp/tmp.dmg -ov -volname "rhythmbox-$VERSION" -fs HFS+ -srcfolder "./output/"; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil convert /tmp/tmp.dmg -format UDZO -o ./$DEPLOYFILE; fi
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: PaG3bgWVCX8WdB3DKs2jualmvSSivkuEm0wPS2+ShcrEc5hvpwwky1cMefvb3xRJ/ogGy0yXx3kLMHfq+dbbrV03lMMZpN+Sze3VFLp38XjqVby3qNwn02/e9kK1JVDnTjvnXBX73Cy+x1aNjbJKfWx069EO19+ajl+P7E8II4TwES/Xz9g3a1YWGCCUJK58kNkNuwJS2eaD+qIMARPtF/r114LPmgZZHVxBj2HGdcEbwUZ86fmYoCf7QyEkmt5e+TbvVM78J13wxCC3iP7nJT0lFS0JYAHz/Y187Xg9c2otjoLSnMNFVdHftI/5plrnYyyJRrByJ4dAHHlZfd2y5JbVekgYHqBdMz/W/CmHE5hmrj+N3sqiOgIvPcFnE7dWEw6tZnB/vu7TEUPOhXwNK+6HeDWPsI5J4+ecMG51DQxywV54y889MVVa95ZZe3RC3ht0ex/W5SI89kNrKcU/WS6YROKHR/cLoq0eZwvL6ssBHMvmYTcYt16ou5hNTFmFkwtMBL6Mqj3lGaSR+JyYJpwZ5jmTWp1cE0icqTtNKiswfRZ11ySvvttgxJ/NzA3Zgiaotx8SHagUL9rLsASe5TRORoDi3C10gAqqZ/aniVdQKWLJoWMZPjwQVLtbx6YgPkDzqSKtHxlsV71nJoHhADadprZahiAytvITtZu0PWE=
+  file: "$DEPLOYFILE"
+  on:
+    repo: sfztools/rhythmbox
+    tags: true

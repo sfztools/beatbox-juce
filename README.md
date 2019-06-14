@@ -18,6 +18,9 @@ I'll put up some forum or sharing platform at some point.
 [JUCE]: https://juce.com/
 [SFZero]: http://stevefolta.github.io/SFZero/
 
+[![Travis](https://img.shields.io/travis/com/sfztools/rhythmbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/rhythmbox)
+[![AppVeyor](https://img.shields.io/appveyor/ci/redtide/rhythmbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/rhythmbox)
+
 ## Installation
 
 Windows binaries are available on the [releases page][],

@@ -1,0 +1,68 @@
+# Start builds on tags only (GitHub and BitBucket)
+skip_non_tags: true
+
+# Do not build feature branch with open Pull Requests
+skip_branch_with_pr: true
+
+# Build worker image (VM template)
+image: Visual Studio 2017
+
+# scripts that are called at very beginning, before repo cloning
+init:
+  - git config --global core.autocrlf input
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+matrix:
+  fast_finish: true # set this flag to immediately finish build once one of the jobs fails.
+  allow_failures:
+    - platform: x64
+      configuration: Release
+
+# exclude configuration from the matrix. Works similarly to 'allow_failures' but build not even being started for excluded combination.
+  exclude:
+    - platform: x86
+      configuration: Debug
+
+# build platform, i.e. x86, x64, Any CPU. This setting is optional.
+platform: x64
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+install:
+  # Juce
+  - ps: Start-FileDownload "https://d30pueezughrda.cloudfront.net/juce/juce-5.4.3-windows.zip"
+  - ps: 7z x -o"C:\" ".\juce-5.4.3-windows.zip"
+  # InnoSetup
+  - choco install -y InnoSetup
+  - set PATH=%PATH%;"C:\Program Files (x86)\Inno Setup 5"
+
+build_script:
+  - ps: cd ".\Builds\VisualStudio2017"
+  - ps: MSBuild.exe .\rhythmbox.sln /p:Configuration=Release
+  - ps: cd .\..\..\
+
+after_build:
+  - ps: mkdir Deployment
+  - ps: cp LICENSE Deployment\LICENSE.txt
+  - ps: cp "Builds\VisualStudio2017\x64\Release\Standalone Plugin\rhythmbox.exe" Deployment\
+  - ps: Start-FileDownload "https://aka.ms/vs/16/release/vc_redist.x64.exe" -FileName "Deployment\vc_redist.x64.exe"
+  - iscc innosetup.iss
+  - cmd: move Output\rhythmbox-setup.exe rhythmbox-%APPVEYOR_REPO_TAG_NAME%-x64.exe
+
+artifacts:
+  - name: Installer
+    path: 'rhythmbox*.exe'
+
+# Deploy to GitHub Releases
+# See https://www.appveyor.com/docs/deployment/github/
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: F0hK0o5SHzUO/tlk1qMiVCbeZtNPUZzfhOw8YEfTs/72AIaWCUo9J4zptDYE2Z7F
+    artifact: Installer
+    draft: false
+    prerelease: false
+    force_update: true
+    on:
+      appveyor_repo_tag: true

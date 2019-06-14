@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=DrumInTheBox
+GenericName=Virtual live drummer pedal
+Comment=Virtual live drummer pedal
+Exec=druminthebox
+Icon=druminthebox
+Categories=AudioVideo;Audio;Music;Midi;
