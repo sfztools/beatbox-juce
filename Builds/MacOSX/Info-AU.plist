@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist>
+  <dict>
+    <key>CFBundleExecutable</key>
+    <string>${EXECUTABLE_NAME}</string>
+    <key>CFBundleIconFile</key>
+    <string></string>
+    <key>CFBundleIdentifier</key>
+    <string>cc.ferrand.rhythmbox</string>
+    <key>CFBundleName</key>
+    <string>RhythmBox</string>
+    <key>CFBundleDisplayName</key>
+    <string>RhythmBox</string>
+    <key>CFBundlePackageType</key>
+    <string>BNDL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.0</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>(c) 2019 Paul Ferrand</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>AudioComponents</key>
+    <array>
+      <dict>
+        <key>name</key>
+        <string>Paul Ferrand: RhythmBox</string>
+        <key>description</key>
+        <string>Generates and controls rhythms live from MIDI loops</string>
+        <key>factoryFunction</key>
+        <string>RhythmBoxAUFactory</string>
+        <key>manufacturer</key>
+        <string>PFE</string>
+        <key>type</key>
+        <string>aumu</string>
+        <key>subtype</key>
+        <string>G4s8</string>
+        <key>version</key>
+        <integer>65536</integer>
+        <key>resourceUsage</key>
+        <dict>
+          <key>network.client</key>
+          <true/>
+          <key>temporary-exception.files.all.read-write</key>
+          <true/>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>
