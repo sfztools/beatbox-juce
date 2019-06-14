@@ -1,0 +1,15 @@
+# See https://help.github.com/en/articles/dealing-with-line-endings
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.ico binary
+
+# Linux files
+Makefile text eol=lf
+
+# macOS files
+*.plist text eol=lf
+*.pbxproj text eol=lf
