@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=DrumInTheBox
+Name=RhythmBox
 GenericName=Virtual live drummer pedal
 Comment=Virtual live drummer pedal
-Exec=druminthebox
-Icon=druminthebox
+Exec=RhythmBox
+Icon=RhythmBox
 Categories=AudioVideo;Audio;Music;Midi;

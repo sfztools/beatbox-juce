@@ -31,21 +31,21 @@ script:
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then cd "./Builds/LinuxMakefile"; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make -j$(nproc) CONFIG=Release; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cd "./Builds/MacOSX"; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then xcodebuild -project rhythmbox.xcodeproj -alltargets -configuration Release build; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then xcodebuild -project RhythmBox.xcodeproj -alltargets -configuration Release build; fi
 - cd ./../../
 
 after_success:
 - export VERSION=$(git describe --tags)
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DEPLOYFILE=rhythmbox-$VERSION-x86_64.AppImage; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DEPLOYFILE=RhythmBox-$VERSION-x86_64.AppImage; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget -c -nv "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then chmod +x linuxdeploy-x86_64.AppImage; fi
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then for size in 16 32 48 128 256; do dirname="RhythmBox/usr/share/icons/hicolor/${size}x${size}/apps"; mkdir -p $dirname; cp ./resources/icons/icon_${size}px.png ./${dirname}/rhythmbox.png; done; fi
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=RhythmBox --desktop-file=./resources/linux/rhythmbox.desktop --executable=./Builds/LinuxMakefile/build/rhythmbox --output=appimage; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then export DEPLOYFILE=rhythmbox-$VERSION.dmg; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then for size in 16 32 48 128 256; do dirname="RhythmBox/usr/share/icons/hicolor/${size}x${size}/apps"; mkdir -p $dirname; cp ./resources/icons/icon_${size}px.png ./${dirname}/RhythmBox.png; done; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=RhythmBox --desktop-file=./resources/linux/RhythmBox.desktop --executable=./Builds/LinuxMakefile/build/RhythmBox --output=appimage; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then export DEPLOYFILE=RhythmBox-$VERSION.dmg; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then mkdir ./output; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp -r ./Builds/MacOSX/build/Release/* ./output/; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp ./resources/icons/icon.icns ./output/rhythmbox.app/Contents/Resources/; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil create /tmp/tmp.dmg -ov -volname "rhythmbox-$VERSION" -fs HFS+ -srcfolder "./output/"; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp ./resources/icons/icon.icns ./output/RhythmBox.app/Contents/Resources/; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil create /tmp/tmp.dmg -ov -volname "RhythmBox-$VERSION" -fs HFS+ -srcfolder "./output/"; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil convert /tmp/tmp.dmg -format UDZO -o ./$DEPLOYFILE; fi
 
 deploy:
