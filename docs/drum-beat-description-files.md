@@ -1,6 +1,6 @@
 ---
-title: Beat Description Files
-lang: en
+title: "Beat Description Files"
+lang: "en"
 ---
 You need at least beat description files for this application to be useful.
 Sadly, I couldn't find much free to use MIDI files (and I am quite sure royalty
@@ -15,7 +15,7 @@ included in the archive.
 When constructed as a `.zip` file the beat description file should be named
 `description.json` and placed in the archive along with the MIDI files.
 
-### Using the free Groove Monkee MIDI files
+## Using the free Groove Monkee MIDI files
 
 I built some beat descriptions that uses the [free midi pack from Groove Monkey][].
 You can register and download the pack, and put the `.json` files
@@ -28,19 +28,19 @@ You don't need to extract them, just add them to your Rhythm library :)
 ["Beat Farm"]: https://groovemonkee.com/pages/beat-farm-free-midi-beats
 [free midi pack from Groove Monkey]: https://groovemonkee.com/pages/free-midi-loop
 
-### Using paid Groove Monkee files
+## Using paid Groove Monkee files
 
 I put the beat descriptions I made for some of the other Groove Monkee packs in here.
 I'll update them if I make more (or receive them from someone!).
 
-### Other files
+## Other files
 
 You can use any midi file for this to work, either from VST drum libraries
 (many come with MIDI files included) or even BeatBuddy files.
 I don't have much on hand but if you do create such files,
 feel free to contact me and I'll put them up here.
 
-### Beat description format
+## Beat description format
 
 The format for these files looks like the following:
 ```json

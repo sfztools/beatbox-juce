@@ -1,6 +1,6 @@
 ---
-title: Basic usage
-lang: en
+title: "Basic usage"
+lang: "en"
 ---
 The usage is quite straightforward.
 Upon launching the application you have to select at least a beat description

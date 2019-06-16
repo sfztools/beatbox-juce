@@ -1,6 +1,6 @@
 ---
-title: Contact and contributions
-lang: en
+title: "Contact and contributions"
+lang: "en"
 ---
 Feel free to post an issue, or contact me by [email](mailto:paulfd@outlook.fr)
 if you need. Any contribution is welcome.

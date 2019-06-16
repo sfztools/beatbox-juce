@@ -1,6 +1,6 @@
 ---
-title: Drum SFZ files
-lang: en
+title: "Drum SFZ files"
+lang: "en"
 ---
 Sadly SFZero is not quite up to par and lacks many advanced features for proper
 drum sounds reproduction.

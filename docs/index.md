@@ -1,5 +1,5 @@
 ---
-title: "RhythmBox"
+title: "Home"
 lang: "en"
 layout: "home"
 date_fmt: "%B %d, %Y"
@@ -38,7 +38,7 @@ See the [build documentation page][] about how to build the application
 from the source code.
 
 [build documentation page]: {{ "/build" | relative_url }}
-[releases page]: https://github.com/paulfd/rhythmbox/releases
+[releases page]: https://github.com/sfztools/rhythmbox/releases
 
 ## Usage
 

@@ -1,6 +1,6 @@
 ---
-title: Build From Source
-lang: en
+title: "Build From Source"
+lang: "en"
 ---
 ## Compiling using the Projucer
 

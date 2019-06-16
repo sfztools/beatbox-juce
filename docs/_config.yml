@@ -38,12 +38,15 @@ url: "https://sfztools.github.io/rhythmbox"
 
 spdx_license_id: "GPL-3.0-or-later"
 
-organization:
+project:
   name: "RhythmBox"
+
+organization:
+  name: "SfzTools"
   url: "https://github.com/sfztools"
 
 authors:
-  content: "PaulFd"
+  content: "Paul Ferrand"
   web: "RedTide"
 
 google:
