@@ -27,6 +27,8 @@ I'll put up some forum or sharing platform at some point.
 [![Travis](https://img.shields.io/travis/com/sfztools/rhythmbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/rhythmbox)
 [![AppVeyor](https://img.shields.io/appveyor/ci/sfztools/rhythmbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/rhythmbox)
 
+![Screenshot](/assets/img/screenshot.png)
+
 </div>
 
 ## Installation
