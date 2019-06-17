@@ -1,8 +1,10 @@
 build/
+Builds/RhythmBox/
 output/
-*.zip
+*.AppImage
 *.code-workspace
 *.DS_Store
+*.zip
 
 Builds/VisualStudio2017/beat-plugin_VST3.vcxproj
 Builds/VisualStudio2017/beat-plugin_SharedCode.vcxproj
