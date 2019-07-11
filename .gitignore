@@ -1,5 +1,4 @@
 build/
-Builds/AppImg/
 Builds/BeatBox/
 output/
 *.AppImage
