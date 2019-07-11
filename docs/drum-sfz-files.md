@@ -6,7 +6,7 @@ Sadly SFZero is not quite up to par and lacks many advanced features for proper
 drum sounds reproduction.
 You can more or less use the drumkits from the good people over at AVLinux
 directly (see [here](http://www.bandshed.net/avldrumkits/)) and they sound OK.
-You can also host the RhythmBox plugin and use any drum library out there; there
+You can also host the BeatBox plugin and use any drum library out there; there
 are very good free ones, most notably [this one](https://www.powerdrumkit.com/).
 Note that hosting the plugin means that the tempo is synced to the host tempo
 though, so it's sometimes impractical; working on adding an option to lift this.

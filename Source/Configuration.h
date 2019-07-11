@@ -23,16 +23,16 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "BeatDescription.h"
 
-inline static File dataDirectory { File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox") };
+inline static File dataDirectory { File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("BeatBox") };
 
-class RhythmBoxAudioProcessor;
+class BeatBoxAudioProcessor;
 
 class Configuration
 {
 public:
     Configuration() = delete;
     ~Configuration() { saveConfiguration(); }
-    Configuration(RhythmBoxAudioProcessor& p) : processor(p) {	}
+    Configuration(BeatBoxAudioProcessor& p) : processor(p) {	}
     
     bool parseConfiguration(const String& filename = "config.json");
     bool saveConfiguration(const String& filename = "config.json");
@@ -83,7 +83,7 @@ public:
     static constexpr bool defaultRandomFills { true };
     static constexpr bool defaultSyncToHost { true };
 private:
-    RhythmBoxAudioProcessor& processor;
+    BeatBoxAudioProcessor& processor;
 
     int mainCC { defaultMainCC };
     int accentCC { defaultAccentCC };
@@ -102,7 +102,7 @@ private:
     std::vector<File> sfzFiles;
 
     var originalConfig;
-    // File dataDirectory{ File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("RhythmBox") };
+    // File dataDirectory{ File::getSpecialLocation(File::SpecialLocationType::userApplicationDataDirectory).getChildFile("BeatBox") };
 
     JUCE_LEAK_DETECTOR(Configuration);
 };

@@ -34,12 +34,12 @@ plugins:
   - jekyll-sitemap
   - jemoji
 
-url: "https://sfztools.github.io/rhythmbox"
+url: "https://sfztools.github.io/beatbox"
 
 spdx_license_id: "GPL-3.0-or-later"
 
 project:
-  name: "RhythmBox"
+  name: "BeatBox"
 
 organization:
   name: "SfzTools"

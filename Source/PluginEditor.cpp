@@ -26,7 +26,7 @@
 #include <utility>
 
 //==============================================================================
-RhythmBoxAudioProcessorEditor::RhythmBoxAudioProcessorEditor (RhythmBoxAudioProcessor& p, AudioProcessorValueTreeState& parameters, Configuration& config)
+BeatBoxAudioProcessorEditor::BeatBoxAudioProcessorEditor (BeatBoxAudioProcessor& p, AudioProcessorValueTreeState& parameters, Configuration& config)
         :	AudioProcessorEditor (&p),
         processor (p),
         config(config),
@@ -90,20 +90,20 @@ RhythmBoxAudioProcessorEditor::RhythmBoxAudioProcessorEditor (RhythmBoxAudioProc
     setSize (700, 300);
 }
 
-RhythmBoxAudioProcessorEditor::~RhythmBoxAudioProcessorEditor()
+BeatBoxAudioProcessorEditor::~BeatBoxAudioProcessorEditor()
 {
     // openGLContext.detach();
 }
 
-void RhythmBoxAudioProcessorEditor::playButtonClicked()
+void BeatBoxAudioProcessorEditor::playButtonClicked()
 {
-    if (processor.getState() != RhythmBoxAudioProcessor::PluginState::Playing)
+    if (processor.getState() != BeatBoxAudioProcessor::PluginState::Playing)
         processor.startPlaying();
     else  
         processor.pausePlaying();
 }
 
-void RhythmBoxAudioProcessorEditor::tapButtonClicked()
+void BeatBoxAudioProcessorEditor::tapButtonClicked()
 {
     const auto currentTap { Time::currentTimeMillis() };
     if (currentTap - lastTap < 6000)
@@ -118,7 +118,7 @@ void RhythmBoxAudioProcessorEditor::tapButtonClicked()
 }
 
 //==============================================================================
-void RhythmBoxAudioProcessorEditor::paint (Graphics& g)
+void BeatBoxAudioProcessorEditor::paint (Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
@@ -155,7 +155,7 @@ void RhythmBoxAudioProcessorEditor::paint (Graphics& g)
     sfzList.setBounds(getLocalBounds());
 }
 
-void RhythmBoxAudioProcessorEditor::resized()
+void BeatBoxAudioProcessorEditor::resized()
 {
         // This is generally where you'll want to lay out the positions of any
         // subcomponents in your editor..
@@ -163,7 +163,7 @@ void RhythmBoxAudioProcessorEditor::resized()
 
 
 
-StatusBox::StatusBox(RhythmBoxAudioProcessor& processor)
+StatusBox::StatusBox(BeatBoxAudioProcessor& processor)
 : Component("Status Box"), processor(processor)
 {
     addAndMakeVisible(selectedBeatLabel);
@@ -194,14 +194,14 @@ void StatusBox::valueTreePropertyChanged (ValueTree& valueTree, const Identifier
     auto labelText { valueTree.getProperty(IDs::BeatName).toString() };
 	switch (processor.getState())
 	{
-	case RhythmBoxAudioProcessor::PluginState::Playing:
+	case BeatBoxAudioProcessor::PluginState::Playing:
 		labelText << " | " << valueTree.getProperty(IDs::PartName).toString();
 		break;
-	case RhythmBoxAudioProcessor::PluginState::FillIn:
+	case BeatBoxAudioProcessor::PluginState::FillIn:
 		labelText << " | " << valueTree.getProperty(IDs::PartName).toString()
 			<< " (Fill " << valueTree.getProperty(IDs::FillIdx).toString() << "/" << valueTree.getProperty(IDs::NumFills).toString() << ")";
 		break;
-	case RhythmBoxAudioProcessor::PluginState::Transition:
+	case BeatBoxAudioProcessor::PluginState::Transition:
 		labelText << " -> " << valueTree.getProperty(IDs::PartName).toString();
 		break;
 	}

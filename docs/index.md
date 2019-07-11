@@ -24,8 +24,8 @@ I'll put up some forum or sharing platform at some point.
 [JUCE]: https://juce.com/
 [SFZero]: http://stevefolta.github.io/SFZero/
 
-[![Travis](https://img.shields.io/travis/com/sfztools/rhythmbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/rhythmbox)
-[![AppVeyor](https://img.shields.io/appveyor/ci/sfztools/rhythmbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/rhythmbox)
+[![Travis](https://img.shields.io/travis/com/sfztools/beatbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/beatbox)
+[![AppVeyor](https://img.shields.io/appveyor/ci/sfztools/beatbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/beatbox)
 
 ![Screenshot](/assets/img/screenshot.png)
 
@@ -40,7 +40,7 @@ See the [build documentation page][] about how to build the application
 from the source code.
 
 [build documentation page]: {{ "/build" | relative_url }}
-[releases page]: https://github.com/sfztools/rhythmbox/releases
+[releases page]: https://github.com/sfztools/beatbox/releases
 
 ## Usage
 

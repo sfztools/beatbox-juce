@@ -1,4 +1,4 @@
-# RhythmBox
+# BeatBox
 
 This application is a live drummer that you can control using buttons or MIDI CC
 with at least 1 controller, as an arranger or a [BeatBuddy][] pedal would.
@@ -14,12 +14,12 @@ Contributions and comments are welcome, as well as beat description files.
 I'll put up some forum or sharing platform at some point.
 
 [BeatBuddy]: https://singularsound.com/
-[JSON files]: https://sfztools.github.io/rhythmbox/drum-beat-description-files
+[JSON files]: https://sfztools.github.io/beatbox/drum-beat-description-files
 [JUCE]: https://juce.com/
 [SFZero]: http://stevefolta.github.io/SFZero/
 
-[![Travis](https://img.shields.io/travis/com/sfztools/rhythmbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/rhythmbox)
-[![AppVeyor](https://img.shields.io/appveyor/ci/sfztools/rhythmbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/rhythmbox)
+[![Travis](https://img.shields.io/travis/com/sfztools/beatbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/beatbox)
+[![AppVeyor](https://img.shields.io/appveyor/ci/sfztools/beatbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/beatbox)
 
 ![Screenshot](screenshot.png)
 
@@ -31,8 +31,8 @@ along with Raspberry Pi binaries.
 See the [build documentation page][] about how to build the application
 from the source code.
 
-[build documentation page]: https://sfztools.github.io/rhythmbox/build
-[releases page]: https://github.com/paulfd/rhythmbox/releases
+[build documentation page]: https://sfztools.github.io/beatbox/build
+[releases page]: https://github.com/sfztools/beatbox/releases
 
 ## Usage
 
@@ -53,8 +53,8 @@ After this, the behavior is:
 - a long tap transitions into the next part.
 - 2 taps trigger the ending.
 
-[beat description]: https://sfztools.github.io/rhythmbox/drum-beat-description-files
-[Sfz file]: https://sfztools.github.io/rhythmbox/drum-sfz-files
+[beat description]: https://sfztools.github.io/beatbox/drum-beat-description-files
+[Sfz file]: https://sfztools.github.io/beatbox/drum-sfz-files
 
 ## Contact and contributions
 

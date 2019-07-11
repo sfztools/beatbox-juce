@@ -325,7 +325,7 @@
  #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "RhythmBox"
+ #define JucePlugin_Name                   "BeatBox"
 #endif
 #ifndef  JucePlugin_Desc
  #define JucePlugin_Desc                   "Generates and controls rhythms live from MIDI loops"
@@ -385,16 +385,16 @@
  #define JucePlugin_AUSubType              JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_AUExportPrefix
- #define JucePlugin_AUExportPrefix         RhythmBoxAU
+ #define JucePlugin_AUExportPrefix         BeatBoxAU
 #endif
 #ifndef  JucePlugin_AUExportPrefixQuoted
- #define JucePlugin_AUExportPrefixQuoted   "RhythmBoxAU"
+ #define JucePlugin_AUExportPrefixQuoted   "BeatBoxAU"
 #endif
 #ifndef  JucePlugin_AUManufacturerCode
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     cc.ferrand.rhythmbox
+ #define JucePlugin_CFBundleIdentifier     cc.ferrand.beatbox
 #endif
 #ifndef  JucePlugin_RTASCategory
  #define JucePlugin_RTASCategory           2048
@@ -412,7 +412,7 @@
  #define JucePlugin_RTASDisableMultiMono   0
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          cc.ferrand.rhythmbox
+ #define JucePlugin_AAXIdentifier          cc.ferrand.beatbox
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -436,7 +436,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "Paul Ferrand: RhythmBox"
+ #define JucePlugin_IAAName                "Paul Ferrand: BeatBox"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       1

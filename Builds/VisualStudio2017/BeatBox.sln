@@ -1,17 +1,17 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2017
 
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhythmBox - Standalone Plugin", "RhythmBox_StandalonePlugin.vcxproj", "{F915ADAD-E2A2-F834-7D9D-C5360D16C659}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeatBox - Standalone Plugin", "BeatBox_StandalonePlugin.vcxproj", "{F915ADAD-E2A2-F834-7D9D-C5360D16C659}"
 	ProjectSection(ProjectDependencies) = postProject
 		{432E2925-1D24-8C1B-BC1B-FD43183B887F} = {432E2925-1D24-8C1B-BC1B-FD43183B887F}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhythmBox - VST3", "RhythmBox_VST3.vcxproj", "{5575E576-023C-9C30-F53F-B986C94C81A1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeatBox - VST3", "BeatBox_VST3.vcxproj", "{5575E576-023C-9C30-F53F-B986C94C81A1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{432E2925-1D24-8C1B-BC1B-FD43183B887F} = {432E2925-1D24-8C1B-BC1B-FD43183B887F}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhythmBox - Shared Code", "RhythmBox_SharedCode.vcxproj", "{432E2925-1D24-8C1B-BC1B-FD43183B887F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeatBox - Shared Code", "BeatBox_SharedCode.vcxproj", "{432E2925-1D24-8C1B-BC1B-FD43183B887F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

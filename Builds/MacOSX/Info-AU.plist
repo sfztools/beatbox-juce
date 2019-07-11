@@ -8,11 +8,11 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>cc.ferrand.rhythmbox</string>
+    <string>cc.ferrand.beatbox</string>
     <key>CFBundleName</key>
-    <string>RhythmBox</string>
+    <string>BeatBox</string>
     <key>CFBundleDisplayName</key>
-    <string>RhythmBox</string>
+    <string>BeatBox</string>
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleSignature</key>
@@ -29,11 +29,11 @@
     <array>
       <dict>
         <key>name</key>
-        <string>Paul Ferrand: RhythmBox</string>
+        <string>Paul Ferrand: BeatBox</string>
         <key>description</key>
         <string>Generates and controls rhythms live from MIDI loops</string>
         <key>factoryFunction</key>
-        <string>RhythmBoxAUFactory</string>
+        <string>BeatBoxAUFactory</string>
         <key>manufacturer</key>
         <string>PFE</string>
         <key>type</key>

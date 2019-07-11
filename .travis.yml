@@ -31,21 +31,21 @@ script:
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then cd "./Builds/LinuxMakefile"; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then make -j$(nproc) CONFIG=Release; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cd "./Builds/MacOSX"; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then xcodebuild -project RhythmBox.xcodeproj -alltargets -configuration Release build; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then xcodebuild -project BeatBox.xcodeproj -alltargets -configuration Release build; fi
 - cd ./../../
 
 after_success:
 - export VERSION=$(git describe --tags)
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DEPLOYFILE=RhythmBox-$VERSION-x86_64.AppImage; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DEPLOYFILE=BeatBox-$VERSION-x86_64.AppImage; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget -c -nv "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then chmod +x linuxdeploy-x86_64.AppImage; fi
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then for size in 16 32 48 128 256; do dirname="RhythmBox/usr/share/icons/hicolor/${size}x${size}/apps"; mkdir -p $dirname; cp ./resources/icons/icon_${size}px.png ./${dirname}/RhythmBox.png; done; fi
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=RhythmBox --desktop-file=./resources/linux/RhythmBox.desktop --executable=./Builds/LinuxMakefile/build/RhythmBox --output=appimage; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then export DEPLOYFILE=RhythmBox-$VERSION.dmg; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then for size in 16 32 48 128 256; do dirname="BeatBox/usr/share/icons/hicolor/${size}x${size}/apps"; mkdir -p $dirname; cp ./resources/icons/icon_${size}px.png ./${dirname}/BeatBox.png; done; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=BeatBox --desktop-file=./resources/linux/.desktop --executable=./Builds/LinuxMakefile/build/BeatBox --output=appimage; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then export DEPLOYFILE=BeatBox-$VERSION.dmg; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then mkdir ./output; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp -r ./Builds/MacOSX/build/Release/* ./output/; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp ./resources/icons/icon.icns ./output/RhythmBox.app/Contents/Resources/; fi
-- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil create /tmp/tmp.dmg -ov -volname "RhythmBox-$VERSION" -fs HFS+ -srcfolder "./output/"; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp ./resources/icons/icon.icns ./output/BeatBox.app/Contents/Resources/; fi
+- if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil create /tmp/tmp.dmg -ov -volname "BeatBox-$VERSION" -fs HFS+ -srcfolder "./output/"; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil convert /tmp/tmp.dmg -format UDZO -o ./$DEPLOYFILE; fi
 
 deploy:
@@ -55,5 +55,5 @@ deploy:
     secure: XkgO0PVsk8Gc0XaWxN+vuAwM3hBatGS8ORns81EHizQ1ScR+yJ8EG8ZkJLoFHe9UBZp/viVJg6DZLfwcuSYPG84KkIcpDdNPqYSGAggIWAhnmIoex7uJtMi+bLl56UFwr7YP0Dz0m/rDssSinWNxaCu80uNBXjHvHxvzPS30sjYLb1aC+RTVkSO5b06gZ4RD3bLEjnqp6CkltuRJTUZYyf8s+LfVnRckIJeT88nDhey/AXG/0R2hY53C/eGfXAl9JTQse43dQ19ZrXg45S/vggaLj/eLBBgpHz9xBH4p8dRtXjCcN90SmOfM+LmpqdSoD4eoii6/eEYW08PQdt4bkJGifhGxGQwPZ5LeObz5kePnq4DW6BwfRWEnMFvIxvcpxYgWPltWJhPUIusIGDPpYKh8FvrV9DpQmJJ0CmjKeobCxDHu8oetCg2fXug+4hm8f62/4lHnh0cKfGK3VS6ZHOY1Ccg5w1L8IU4en6We7DiyuMZ94JqISK0Lf5+qDGQalkDuKopHVC67c/hTfItkkStqFZ2LYrCod8DMAr3KmCMSqhF/bylpD2UvyDpPVgS+HG3Ww+pPWJMxX+2KMfu0Lnc6bhWbupfflTlTZk+NgZFTduyYvc0uiMz/fiJpeShp6Hv1Pg24QftrIcYYHpFbEg4ZIcpksDsT9OSaZxY2Xs4=
   file: "$DEPLOYFILE"
   on:
-    repo: sfztools/rhythmbox
+    repo: sfztools/beatbox
     tags: true

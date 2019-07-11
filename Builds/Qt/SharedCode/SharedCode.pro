@@ -8,7 +8,7 @@
 
 QT        -= core gui
 TEMPLATE   = lib
-TARGET     = RhythmBox
+TARGET     = BeatBox
 CONFIG    += link_pkgconfig staticlib
 PKGCONFIG += alsa freetype2 x11 xext xinerama webkit2gtk-4.0 gtk+-x11-3.0 libcurl
 QMAKE_CXXFLAGS += -std=c++17

@@ -29,9 +29,9 @@
 // #include <range/v3/all.hpp>
 
 //==============================================================================
-RhythmBoxAudioProcessor::RhythmBoxAudioProcessor()
+BeatBoxAudioProcessor::BeatBoxAudioProcessor()
     : 	AudioProcessor(BusesProperties().withOutput("Output", AudioChannelSet::stereo(), true))
-    ,	parameters(*this, nullptr, Identifier("RhythmBoxParameters"), setUpParameters())
+    ,	parameters(*this, nullptr, Identifier("BeatBoxParameters"), setUpParameters())
     ,	config(*this)
 {
     tempo = parameters.getRawParameterValue ("tempo");
@@ -66,12 +66,12 @@ RhythmBoxAudioProcessor::RhythmBoxAudioProcessor()
     poppedSequences.reserve(16);
 }
 
-RhythmBoxAudioProcessor::~RhythmBoxAudioProcessor()
+BeatBoxAudioProcessor::~BeatBoxAudioProcessor()
 {
     
 }
 
-AudioProcessorValueTreeState::ParameterLayout RhythmBoxAudioProcessor::setUpParameters()
+AudioProcessorValueTreeState::ParameterLayout BeatBoxAudioProcessor::setUpParameters()
 {
     return {
         std::make_unique<AudioParameterFloat>("tempo", "Tempo", 1.0f, 300.0f, defaultTempo)
@@ -79,7 +79,7 @@ AudioProcessorValueTreeState::ParameterLayout RhythmBoxAudioProcessor::setUpPara
 }
 
 //==============================================================================
-void RhythmBoxAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void BeatBoxAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     ignoreUnused(samplesPerBlock);
     // Clear note-off events
@@ -92,7 +92,7 @@ void RhythmBoxAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
     sfzSynth.setCurrentPlaybackSampleRate(sampleRate);
 }
 
-void RhythmBoxAudioProcessor::sendNoteOffsAndClear()
+void BeatBoxAudioProcessor::sendNoteOffsAndClear()
 {
     const auto midiOutputIndex = MidiOutput::getDefaultDeviceIndex();
     const auto midiOutput = std::unique_ptr<MidiOutput>(MidiOutput::openDevice(midiOutputIndex));
@@ -114,12 +114,12 @@ void RhythmBoxAudioProcessor::sendNoteOffsAndClear()
     sequences.clear();
 }
 
-void RhythmBoxAudioProcessor::releaseResources()
+void BeatBoxAudioProcessor::releaseResources()
 {
     sendNoteOffsAndClear();
 }
 
-void RhythmBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void BeatBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
     ScopedNoDenormals noDenormals;
     // Clear all outputs
@@ -201,7 +201,7 @@ void RhythmBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
     sfzSynth.renderNextBlock(buffer, midiMessages, 0, numSamples);
 }
 
-void RhythmBoxAudioProcessor::deferNoteOn(int noteNumber, uint8 velocity, double timestamp)
+void BeatBoxAudioProcessor::deferNoteOn(int noteNumber, uint8 velocity, double timestamp)
 {
     if (noteNumber < 0 || noteNumber > 127)
         return;
@@ -214,7 +214,7 @@ void RhythmBoxAudioProcessor::deferNoteOn(int noteNumber, uint8 velocity, double
     deferredEvents.push_back(MidiMessage::noteOn(outputMidiChannel, noteNumber, velocity).withTimeStamp(timestamp));
 }
 
-void RhythmBoxAudioProcessor::deferNoteOff(int noteNumber, double timestamp)
+void BeatBoxAudioProcessor::deferNoteOff(int noteNumber, double timestamp)
 {
     if (noteNumber < 0 || noteNumber > 127)
         return;
@@ -225,7 +225,7 @@ void RhythmBoxAudioProcessor::deferNoteOff(int noteNumber, double timestamp)
     deferredEvents.push_back(MidiMessage::noteOff(outputMidiChannel, noteNumber).withTimeStamp(timestamp));
 }
 
-void RhythmBoxAudioProcessor::processInputMidiEvents(MidiBuffer& midiMessages, double normalizedSamplePeriod)
+void BeatBoxAudioProcessor::processInputMidiEvents(MidiBuffer& midiMessages, double normalizedSamplePeriod)
 {
     auto midiIterator = MidiBuffer::Iterator(midiMessages);
     MidiMessage evt;
@@ -256,7 +256,7 @@ void RhythmBoxAudioProcessor::processInputMidiEvents(MidiBuffer& midiMessages, d
     }
 }
 
-void RhythmBoxAudioProcessor::processDeferredEvents(MidiBuffer& midiMessages, double endTime, double normalizedSamplePeriod)
+void BeatBoxAudioProcessor::processDeferredEvents(MidiBuffer& midiMessages, double endTime, double normalizedSamplePeriod)
 {
     // Sort the event vector
     std::sort(deferredEvents.begin(), deferredEvents.end(), TimestampComparison());
@@ -276,7 +276,7 @@ void RhythmBoxAudioProcessor::processDeferredEvents(MidiBuffer& midiMessages, do
     playTimeHead = endTime;
 }
 
-void RhythmBoxAudioProcessor::setBeatDescription(BeatDescription* newDescription)
+void BeatBoxAudioProcessor::setBeatDescription(BeatDescription* newDescription)
 {
     description = newDescription;
     if (description != nullptr)
@@ -289,7 +289,7 @@ void RhythmBoxAudioProcessor::setBeatDescription(BeatDescription* newDescription
     stopPlaying(); // Reset everything and setup the intro
 }
 
-void RhythmBoxAudioProcessor::loadSfzPatch(const File& sfzFile)
+void BeatBoxAudioProcessor::loadSfzPatch(const File& sfzFile)
 {
     sfzSynth.clearSounds();
 
@@ -307,17 +307,17 @@ void RhythmBoxAudioProcessor::loadSfzPatch(const File& sfzFile)
     vtState.setProperty(IDs::SfzFile, sfzFile.getFileNameWithoutExtension(), nullptr);
 }
 
-void RhythmBoxAudioProcessor::startPlaying()
+void BeatBoxAudioProcessor::startPlaying()
 {
     setState(PluginState::Playing);
 }
 
-void RhythmBoxAudioProcessor::pausePlaying()
+void BeatBoxAudioProcessor::pausePlaying()
 {
     setState(PluginState::Stopped);
 }
 
-void RhythmBoxAudioProcessor::stopPlaying()
+void BeatBoxAudioProcessor::stopPlaying()
 {
     // const ScopedSuspender suspender { *this };
     const ScopedLock lock { getCallbackLock() };
@@ -333,7 +333,7 @@ void RhythmBoxAudioProcessor::stopPlaying()
     pushSequenceBack(description->getCurrentPart());
 }
 
-void RhythmBoxAudioProcessor::fillIn()
+void BeatBoxAudioProcessor::fillIn()
 {
     if (description == nullptr)
         return;
@@ -369,7 +369,7 @@ void RhythmBoxAudioProcessor::fillIn()
     setState(PluginState::FillIn);
 }
 
-void RhythmBoxAudioProcessor::nextPart()
+void BeatBoxAudioProcessor::nextPart()
 {
     if (description == nullptr)
         return;
@@ -401,7 +401,7 @@ void RhythmBoxAudioProcessor::nextPart()
     setState(PluginState::Transition);
 }
 
-void RhythmBoxAudioProcessor::ending()
+void BeatBoxAudioProcessor::ending()
 {
     if (description == nullptr)
         return;
@@ -421,13 +421,13 @@ void RhythmBoxAudioProcessor::ending()
     setState(PluginState::Ending);
 }
 
-void RhythmBoxAudioProcessor::setState(PluginState newState)
+void BeatBoxAudioProcessor::setState(PluginState newState)
 {
     state = newState;
     triggerAsyncUpdate(); // Update the state values
 }
 
-String RhythmBoxAudioProcessor::getCurrentStatusString()
+String BeatBoxAudioProcessor::getCurrentStatusString()
 {
     if (description == nullptr)
         return { "--" };
@@ -449,14 +449,14 @@ String RhythmBoxAudioProcessor::getCurrentStatusString()
     return returnedString;
 }
 
-void RhythmBoxAudioProcessor::mainSwitchDown(int64 switchTime)
+void BeatBoxAudioProcessor::mainSwitchDown(int64 switchTime)
 {
     if (state == PluginState::FillIn && switchTime - lastSwitchUpTime < 500)
         ending();
     lastSwitchUpTime = switchTime;
 }
 
-void RhythmBoxAudioProcessor::mainSwitchUp(int64 switchTime)
+void BeatBoxAudioProcessor::mainSwitchUp(int64 switchTime)
 {
     lastSwitchDownTime = switchTime;
     switch (state)
@@ -477,7 +477,7 @@ void RhythmBoxAudioProcessor::mainSwitchUp(int64 switchTime)
     }
 }
 
-void RhythmBoxAudioProcessor::pushSequenceFront(const std::shared_ptr<BeatSequence>& newSequence)
+void BeatBoxAudioProcessor::pushSequenceFront(const std::shared_ptr<BeatSequence>& newSequence)
 {
     if (newSequence == nullptr)
         return;
@@ -487,7 +487,7 @@ void RhythmBoxAudioProcessor::pushSequenceFront(const std::shared_ptr<BeatSequen
     sequences.push_front(newSequence);
 }
 
-void RhythmBoxAudioProcessor::pushSequenceBack(const std::shared_ptr<BeatSequence>& newSequence)
+void BeatBoxAudioProcessor::pushSequenceBack(const std::shared_ptr<BeatSequence>& newSequence)
 {
     if (newSequence == nullptr)
         return;
@@ -497,13 +497,13 @@ void RhythmBoxAudioProcessor::pushSequenceBack(const std::shared_ptr<BeatSequenc
     sequences.push_back(newSequence);
 }
 
-void RhythmBoxAudioProcessor::resetPlayHeads()
+void BeatBoxAudioProcessor::resetPlayHeads()
 {
     sequencePlayTimeHead = 0.0;
     playTimeHead = 0.0;
 }
 
-void RhythmBoxAudioProcessor::handleAsyncUpdate()
+void BeatBoxAudioProcessor::handleAsyncUpdate()
 {
     // Garbage collect the popped sequences
     poppedSequences.clear();
@@ -519,12 +519,12 @@ void RhythmBoxAudioProcessor::handleAsyncUpdate()
 }
 
 // JUCE boilerplate stuff ==============================================================
-AudioProcessorEditor* RhythmBoxAudioProcessor::createEditor()
+AudioProcessorEditor* BeatBoxAudioProcessor::createEditor()
 {
-    return new RhythmBoxAudioProcessorEditor(*this, this->parameters, this->config);
+    return new BeatBoxAudioProcessorEditor(*this, this->parameters, this->config);
 }
 
-void RhythmBoxAudioProcessor::getStateInformation (MemoryBlock& destData)
+void BeatBoxAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
     // auto parameterStates = parameters.copyState();
     // std::unique_ptr<XmlElement> xml (parameterStates.createXml());
@@ -532,7 +532,7 @@ void RhythmBoxAudioProcessor::getStateInformation (MemoryBlock& destData)
     ignoreUnused(destData);
 }
 
-void RhythmBoxAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void BeatBoxAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // std::unique_ptr<XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
     // if (xmlState.get() != nullptr)
@@ -547,11 +547,11 @@ void RhythmBoxAudioProcessor::setStateInformation (const void* data, int sizeInB
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new RhythmBoxAudioProcessor();
+    return new BeatBoxAudioProcessor();
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool RhythmBoxAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
+bool BeatBoxAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
 {
 #if JucePlugin_IsMidiEffect
     ignoreUnused(layouts);

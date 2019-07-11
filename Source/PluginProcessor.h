@@ -55,13 +55,13 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ScopedSuspender)
 };
 
-class RhythmBoxAudioProcessor  : public AudioProcessor, public AsyncUpdater
+class BeatBoxAudioProcessor  : public AudioProcessor, public AsyncUpdater
 {
 public:
     //==============================================================================
     
-    RhythmBoxAudioProcessor();
-    ~RhythmBoxAudioProcessor();
+    BeatBoxAudioProcessor();
+    ~BeatBoxAudioProcessor();
 
     //==============================================================================
 
@@ -198,7 +198,7 @@ private:
 
     // Parameters (Has to be last otherwise it create problem)
     AudioProcessorValueTreeState::ParameterLayout setUpParameters();
-    AudioProcessorValueTreeState parameters{ *this, nullptr, Identifier("RhythmBoxParameters"), {} };
+    AudioProcessorValueTreeState parameters{ *this, nullptr, Identifier("BeatBoxParameters"), {} };
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RhythmBoxAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BeatBoxAudioProcessor)
 };

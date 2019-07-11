@@ -1,6 +1,6 @@
 {
-    "name": "RhythmBox",
-    "short_name": "RhythmBox",
+    "name": "BeatBox",
+    "short_name": "BeatBox",
     "icons": [
         {
             "src": "/assets/ico/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "https://sfztools.github.io/rhythmbox/",
+    "start_url": "https://sfztools.github.io/beatbox/",
     "display": "standalone"
 }

@@ -14,9 +14,9 @@ BEGIN
     BLOCK "040904E4"
     BEGIN
       VALUE "LegalCopyright",  "(c) 2019 Paul Ferrand\0"
-      VALUE "FileDescription",  "RhythmBox\0"
+      VALUE "FileDescription",  "BeatBox\0"
       VALUE "FileVersion",  "1.0.0\0"
-      VALUE "ProductName",  "RhythmBox\0"
+      VALUE "ProductName",  "BeatBox\0"
       VALUE "ProductVersion",  "1.0.0\0"
     END
   END

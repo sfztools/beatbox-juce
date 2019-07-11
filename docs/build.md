@@ -34,8 +34,8 @@ cmake ..
 cmake --build . -j 8 --config Release
 ```
 There are 3 targets:
-- `rhythmbox_Standalone` for the standalone application
-- `rhythmbox_VST` for the VST3 plugin
-- `rhythmbox_Test` for the test suite.
+- `beatbox_Standalone` for the standalone application
+- `beatbox_VST` for the VST3 plugin
+- `beatbox_Test` for the test suite.
 
 Replace 8 by your number of cores, and Release with Debug if you wish.

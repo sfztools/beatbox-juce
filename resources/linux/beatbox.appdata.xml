@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2019 Paul Ferrand <paulfd@outlook.fr> -->
 <component type="desktop">
- <id>org.sfztools.rhythmbox</id>
+ <id>org.sfztools.beatbox</id>
  <metadata_license>FSFAP</metadata_license>
  <project_license>GPL-3.0+</project_license>
- <name>RhythmBox</name>
+ <name>BeatBox</name>
  <summary>Open-Source live drummer arranger</summary>
  <description>
-  <p>RhythmBox is a live drummer that you can control using buttons or MIDI CC
+  <p>BeatBox is a live drummer that you can control using buttons or MIDI CC
   with at least 1 controller, as an arranger or a BeatBuddy pedal would.
   The drum loops are described in simple JSON files.
   The application either outputs MIDI notes,
@@ -15,13 +15,13 @@
  </description>
  <screenshots>
   <screenshot type="default">
-   <image>https://sfztools.github.io/rhythmbox/screenshot.png</image>
+   <image>https://sfztools.github.io/beatbox/screenshot.png</image>
    <caption>The main window</caption>
   </screenshot>
  </screenshots>
- <launchable type="desktop-id">RhythmBox.desktop</launchable>
+ <launchable type="desktop-id">BeatBox.desktop</launchable>
  <provides>
-​  <binary>RhythmBox</binary>
+​  <binary>BeatBox</binary>
 ​ </provides>
  <keywords>
   <keyword>ALSA</keyword>
@@ -32,7 +32,7 @@
   <keyword>MIDI</keyword>
   <keyword>SFZ</keyword>
  </keywords>
- <url type="homepage">https://sfztools.github.io/rhythmbox</url>
+ <url type="homepage">https://sfztools.github.io/beatbox</url>
  <project_group>SfzTools</project_group>
  <developer_name>Paul Ferrand</developer_name>
  <update_contact>sfztools@gmail.com</update_contact>

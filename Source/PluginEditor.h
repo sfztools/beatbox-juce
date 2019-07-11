@@ -54,7 +54,7 @@ private:
 class StatusBox: public Component, public ValueTree::Listener
 {
 public:
-    StatusBox(RhythmBoxAudioProcessor& processor);
+    StatusBox(BeatBoxAudioProcessor& processor);
     ~StatusBox();
     void paint(Graphics & g);
     // ValueTree::Listener callbacks
@@ -70,15 +70,15 @@ private:
     Label selectedSfzLabel;
     Label lastCCLabel;
 
-    RhythmBoxAudioProcessor& processor;
+    BeatBoxAudioProcessor& processor;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatusBox)
 };
 
-class RhythmBoxAudioProcessorEditor : public AudioProcessorEditor
+class BeatBoxAudioProcessorEditor : public AudioProcessorEditor
 {
 public:
-    RhythmBoxAudioProcessorEditor (RhythmBoxAudioProcessor&, AudioProcessorValueTreeState& parameters, Configuration& config);
-    ~RhythmBoxAudioProcessorEditor();
+    BeatBoxAudioProcessorEditor (BeatBoxAudioProcessor&, AudioProcessorValueTreeState& parameters, Configuration& config);
+    ~BeatBoxAudioProcessorEditor();
     //==============================================================================
     void paint (Graphics&) override;
     void resized() override;
@@ -92,7 +92,7 @@ private:
     //juce::OpenGLContext openGLContext;
 
     int64 lastTap { -1 };
-    RhythmBoxAudioProcessor& processor;
+    BeatBoxAudioProcessor& processor;
     AudioProcessorValueTreeState& processorParameters;
     Configuration& config;
     RhythmListComponent rhythmList { config };
@@ -115,5 +115,5 @@ private:
     Label tempoLabel;
 
     bool buttonWasDown{ false };
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RhythmBoxAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BeatBoxAudioProcessorEditor)
 };

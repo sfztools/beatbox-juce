@@ -2,17 +2,17 @@
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="RhythmBox\Source\sfzero\sf2-chunks">
-      <UniqueIdentifier>{C3C58160-6018-B6EF-3B07-B72066AA9647}</UniqueIdentifier>
+    <Filter Include="BeatBox\Source\sfzero\sf2-chunks">
+      <UniqueIdentifier>{044A975A-7E04-C66D-797A-D0A713A5B931}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RhythmBox\Source\sfzero">
-      <UniqueIdentifier>{999DA50D-2C6E-B2EB-B1A6-D1399160BDD2}</UniqueIdentifier>
+    <Filter Include="BeatBox\Source\sfzero">
+      <UniqueIdentifier>{B7437AB5-584A-DA34-7D00-22318A599B2B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RhythmBox\Source">
-      <UniqueIdentifier>{4863A3F7-0518-C51C-639E-F28F2FE16E48}</UniqueIdentifier>
+    <Filter Include="BeatBox\Source">
+      <UniqueIdentifier>{87783756-B432-AAC6-ABAF-BBD578727068}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RhythmBox">
-      <UniqueIdentifier>{16BDA558-1684-A092-94E5-A43F59F61021}</UniqueIdentifier>
+    <Filter Include="BeatBox">
+      <UniqueIdentifier>{CD9F6674-C059-77CF-8AB8-035F9AAD1EAF}</UniqueIdentifier>
     </Filter>
     <Filter Include="JUCE Modules\juce_audio_basics\audio_play_head">
       <UniqueIdentifier>{EB58F05A-A968-CEBE-40C4-107CDD8F240F}</UniqueIdentifier>
@@ -425,70 +425,70 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\sfzero\RIFF.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SF2.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SF2Generator.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SF2Reader.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SF2Sound.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZDebug.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZEG.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZReader.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZRegion.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZSample.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZSound.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZSynth.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sfzero\SFZVoice.cpp">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BeatDescription.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BeatSequence.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Configuration.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\FileSearchers.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\RhythmChooser.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SfzChooser.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SFZero.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\PluginEditor.cpp">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClCompile>
     <ClCompile Include="C:\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <Filter>JUCE Modules\juce_audio_basics\buffers</Filter>
@@ -2437,112 +2437,112 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\generators.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\ibag.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\igen.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\imod.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\inst.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\iver.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\pbag.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\pgen.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\phdr.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\pmod.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\sf2-chunks\shdr.h">
-      <Filter>RhythmBox\Source\sfzero\sf2-chunks</Filter>
+      <Filter>BeatBox\Source\sfzero\sf2-chunks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\RIFF.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SF2.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SF2Generator.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SF2Reader.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SF2Sound.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SF2WinTypes.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZCommon.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZDebug.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZEG.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZReader.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZRegion.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZSample.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZSound.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZSynth.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sfzero\SFZVoice.h">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\BeatDescription.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\BeatSequence.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Configuration.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\FileSearchers.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\RhythmChooser.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SfzChooser.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SFZero.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Watchers.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PluginProcessor.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PluginEditor.h">
-      <Filter>RhythmBox\Source</Filter>
+      <Filter>BeatBox\Source</Filter>
     </ClInclude>
     <ClInclude Include="C:\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
@@ -4680,7 +4680,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Source\sfzero\LICENSE">
-      <Filter>RhythmBox\Source\sfzero</Filter>
+      <Filter>BeatBox\Source\sfzero</Filter>
     </None>
     <None Include="C:\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt">
       <Filter>JUCE Modules\juce_audio_formats\codecs\flac</Filter>

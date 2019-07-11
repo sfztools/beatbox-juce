@@ -39,20 +39,20 @@ install:
 
 build_script:
   - ps: cd ".\Builds\VisualStudio2017"
-  - ps: MSBuild.exe .\RhythmBox.sln /p:Configuration=Release
+  - ps: MSBuild.exe .\BeatBox.sln /p:Configuration=Release
   - ps: cd .\..\..\
 
 after_build:
   - ps: mkdir Deployment
   - ps: cp LICENSE Deployment\LICENSE.txt
-  - ps: cp "Builds\VisualStudio2017\x64\Release\Standalone Plugin\RhythmBox.exe" Deployment\
+  - ps: cp "Builds\VisualStudio2017\x64\Release\Standalone Plugin\BeatBox.exe" Deployment\
   - ps: Start-FileDownload "https://aka.ms/vs/16/release/vc_redist.x64.exe" -FileName "Deployment\vc_redist.x64.exe"
   - iscc innosetup.iss
-  - cmd: move Output\RhythmBox-setup.exe RhythmBox-%APPVEYOR_REPO_TAG_NAME%-x64.exe
+  - cmd: move Output\BeatBox-setup.exe BeatBox-%APPVEYOR_REPO_TAG_NAME%-x64.exe
 
 artifacts:
   - name: Installer
-    path: 'RhythmBox*.exe'
+    path: 'BeatBox*.exe'
 
 # Deploy to GitHub Releases
 # See https://www.appveyor.com/docs/deployment/github/

@@ -8,7 +8,7 @@
 
 QT        -= core gui
 TEMPLATE   = app
-TARGET     = RhythmBox
+TARGET     = BeatBox
 CONFIG    += link_pkgconfig
 PKGCONFIG += alsa freetype2 x11 xext xinerama webkit2gtk-4.0 gtk+-x11-3.0 libcurl
 QMAKE_CXXFLAGS += -std=c++17
@@ -32,7 +32,7 @@ DEFINES += QT_DEPRECATED_WARNINGS \
 INCLUDEPATH += /usr/include/freetype2 $$_PRO_FILE_PWD_/../../../Source \
                $$_PRO_FILE_PWD_/../../../JuceLibraryCode $(HOME)/JUCE/modules
 LIB_BUILDDIR = $$OUT_PWD/../SharedCode
-LIBS        += -m64 -ldl -lpthread -lrt -L"$$LIB_BUILDDIR" -lRhythmBox
+LIBS        += -m64 -ldl -lpthread -lrt -L"$$LIB_BUILDDIR" -lBeatBox
 QMAKE_CFLAGS = -Wall -Wno-strict-aliasing -Wno-strict-overflow \
                -m64 -O0 -mstackrealign -fPIC -g
 
