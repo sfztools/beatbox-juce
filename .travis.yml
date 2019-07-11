@@ -40,7 +40,7 @@ after_success:
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget -c -nv "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then chmod +x linuxdeploy-x86_64.AppImage; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then for size in 16 32 48 128 256; do dirname="BeatBox/usr/share/icons/hicolor/${size}x${size}/apps"; mkdir -p $dirname; cp ./resources/icons/icon_${size}px.png ./${dirname}/BeatBox.png; done; fi
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=BeatBox --desktop-file=./resources/linux/.desktop --executable=./Builds/LinuxMakefile/build/BeatBox --output=appimage; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then ./linuxdeploy-x86_64.AppImage --appdir=BeatBox --desktop-file=./resources/linux/BeatBox.desktop --executable=./Builds/LinuxMakefile/build/BeatBox --output=appimage; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then export DEPLOYFILE=BeatBox-$VERSION.dmg; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then mkdir ./output; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp -r ./Builds/MacOSX/build/Release/* ./output/; fi
