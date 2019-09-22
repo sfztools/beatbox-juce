@@ -47,6 +47,14 @@ after_success:
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then cp ./resources/icons/icon.icns ./output/BeatBox.app/Contents/Resources/; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil create /tmp/tmp.dmg -ov -volname "BeatBox-$VERSION" -fs HFS+ -srcfolder "./output/"; fi
 - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then hdiutil convert /tmp/tmp.dmg -format UDZO -o ./$DEPLOYFILE; fi
+- wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- ./send.sh success $WEBHOOK_URL
+
+after_failure:
+- wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- ./send.sh failure $WEBHOOK_URL
 
 deploy:
   provider: releases
