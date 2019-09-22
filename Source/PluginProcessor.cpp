@@ -46,9 +46,9 @@ BeatBoxAudioProcessor::BeatBoxAudioProcessor()
     config.parseConfiguration();
 
     
-    // sfzero setup
-    for(auto i = 0; i < 128; ++i)
-        sfzSynth.addVoice(new sfzero::Voice());
+    // // sfzero setup
+    // for(auto i = 0; i < 128; ++i)
+    //     sfzSynth.addVoice(new sfzero::Voice());
     
     formatManager.registerBasicFormats();
 
@@ -89,7 +89,8 @@ void BeatBoxAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
     resetPlayHeads();
     samplePeriod = 1.0 / sampleRate;
 
-    sfzSynth.setCurrentPlaybackSampleRate(sampleRate);
+    sfzSynth.setSampleRate(sampleRate);
+    sfzSynth.setSamplesPerBlock(samplesPerBlock);
 }
 
 void BeatBoxAudioProcessor::sendNoteOffsAndClear()
@@ -140,7 +141,6 @@ void BeatBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer
     if (state == PluginState::Stopped || sequences.empty())
     {
         midiMessages.addEvent(MidiMessage::allNotesOff(10), 0);
-        sfzSynth.renderNextBlock(buffer, midiMessages, 0, numSamples);
         return;
     }
 
@@ -198,7 +198,21 @@ void BeatBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer
         }
     }
     processDeferredEvents(midiMessages, endTime, normalizedSamplePeriod);
-    sfzSynth.renderNextBlock(buffer, midiMessages, 0, numSamples);
+
+    // Final dispatch
+    auto midiIterator = MidiBuffer::Iterator(midiMessages);
+    MidiMessage evt;
+    int position;
+    while (midiIterator.getNextEvent(evt, position))
+    {
+        if (evt.isNoteOn())
+            sfzSynth.noteOn(position, evt.getChannel(), evt.getNoteNumber(), evt.getVelocity());
+        if (evt.isNoteOff())
+            sfzSynth.noteOff(position, evt.getChannel(), evt.getNoteNumber(), evt.getVelocity());
+    }
+
+    // Render the block
+    sfzSynth.renderBlock({{buffer.getWritePointer(0), buffer.getWritePointer(1)}, static_cast<size_t>(buffer.getNumSamples())});
 }
 
 void BeatBoxAudioProcessor::deferNoteOn(int noteNumber, uint8 velocity, double timestamp)
@@ -291,8 +305,6 @@ void BeatBoxAudioProcessor::setBeatDescription(BeatDescription* newDescription)
 
 void BeatBoxAudioProcessor::loadSfzPatch(const File& sfzFile)
 {
-    sfzSynth.clearSounds();
-
     if (!sfzFile.exists())
     {
         vtState.setProperty(IDs::SfzFile, "MIDI output", nullptr);
@@ -300,10 +312,12 @@ void BeatBoxAudioProcessor::loadSfzPatch(const File& sfzFile)
         return; 
     }
 
-    auto sound = new sfzero::Sound(sfzFile);
-    sound->loadRegions();
-    sound->loadSamples(formatManager);
-    sfzSynth.addSound(sound);
+    // auto sound = new sfzero::Sound(sfzFile);
+    // sound->loadRegions();
+    // sound->loadSamples(formatManager);
+    // sfzSynth.addSound(sound);
+    const ScopedLock lock { getCallbackLock() };
+    sfzSynth.loadSfzFile(sfzFile.getFullPathName().toStdString());
     vtState.setProperty(IDs::SfzFile, sfzFile.getFileNameWithoutExtension(), nullptr);
 }
 

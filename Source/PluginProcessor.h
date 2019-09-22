@@ -27,7 +27,8 @@
 #include "BeatDescription.h"
 #include "BeatSequence.h"
 #include "Configuration.h"
-#include "SFZero.h"
+// #include "SFZero.h"
+#include "Synth.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/basic_file_sink.h"
 #include <deque>
@@ -193,7 +194,7 @@ private:
     // Private methods
     void setState(PluginState newState);
 
-    sfzero::Synth sfzSynth;
+    sfz::Synth sfzSynth;
     AudioFormatManager formatManager;
 
     // Parameters (Has to be last otherwise it create problem)

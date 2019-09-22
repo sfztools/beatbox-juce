@@ -1,11 +1,20 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.9)
 # You need to generate the AppConfig.h and the JuceHeader.h through the Projucer; the rest is more or less here 
 
-project(BeatBox VERSION 1.0.0 LANGUAGES CXX)
+project(BeatBox VERSION 1.0.0)
 
 # Change this if you want to use another juce library
 set(JUCE_ROOT_DIR "JuceLibraryCode")
 
+# Enable LTO
+# set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+# set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+
+# Set the C++ version
+set(CMAKE_CXX_STANDARD 17)
+
+# Export the compile_commands.json file
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Set these to match the juce header file, modulo the audio plugin clients
 set(JUCE_MODULES
@@ -31,7 +40,7 @@ set(SOURCES
     Source/FileSearchers.cpp 
     Source/BeatSequence.cpp 
     Source/Configuration.cpp 
-    Source/SFZero.cpp
+    # Source/SFZero.cpp
 )
 
 set(TEST_SOURCES
@@ -75,7 +84,7 @@ target_include_directories(JUCE PUBLIC JuceLibraryCode)
 target_include_directories(JUCE PUBLIC ${JUCE_MODULES_DIR}/juce_audio_processors/format_types/VST3_SDK)
 
 # Compile features
-target_compile_features(JUCE PRIVATE cxx_std_17)
+# target_compile_features(JUCE PRIVATE cxx_std_17)
 if (UNIX)
     target_link_libraries(JUCE ALSA::ALSA Freetype::Freetype CURL::libcurl PkgConfig::deps)
     # Force include the app config
@@ -86,6 +95,12 @@ if(MSVC)
     # Force include the app config
     target_compile_options(JUCE PUBLIC /FI AppConfig.h)
 endif(MSVC)
+
+####### Sfizz
+set(SFIZZ_CLIENTS OFF CACHE BOOL "Disable sfizz's clients")
+set(SFIZZ_TESTS OFF CACHE BOOL "Disable sfizz's tests")
+set(SFIZZ_BENCHMARKS OFF CACHE BOOL "Disable sfizz's benchmarks")
+add_subdirectory(Source/sfizz)
 
 ###############################
 # Standalone plugin application
@@ -101,8 +116,9 @@ if(UNIX)
 endif(UNIX)
 set_target_properties(${PROJECT_NAME}_Standalone PROPERTIES OUTPUT_NAME "BeatBox")
 target_link_libraries(${PROJECT_NAME}_Standalone JUCE)
+target_link_libraries(${PROJECT_NAME}_Standalone sfizz::sfizz stdc++fs)
 target_include_directories(${PROJECT_NAME}_Standalone PRIVATE Includes)
-target_compile_features(${PROJECT_NAME}_Standalone PRIVATE cxx_std_17)
+# target_compile_features(${PROJECT_NAME}_Standalone PRIVATE cxx_std_17)
 
 ###############################
 # Test application (No WIN32 here, we want the main entry point and not WinMain)
@@ -114,8 +130,9 @@ endif(UNIX)
 target_compile_definitions(${PROJECT_NAME}_Test PRIVATE JUCE_STANDALONE_APPLICATION=1)
 set_target_properties(${PROJECT_NAME}_Test PROPERTIES OUTPUT_NAME "BeatBox_Tests")
 target_link_libraries(${PROJECT_NAME}_Test JUCE)
+target_link_libraries(${PROJECT_NAME}_Test sfizz::sfizz)
 target_include_directories(${PROJECT_NAME}_Test PRIVATE Includes)
-target_compile_features(${PROJECT_NAME}_Test PRIVATE cxx_std_17)
+# target_compile_features(${PROJECT_NAME}_Test PRIVATE cxx_std_17)
 file(COPY "Tests/TestFiles" DESTINATION ${CMAKE_BINARY_DIR})
 
 ###############################
@@ -124,5 +141,6 @@ add_library(${PROJECT_NAME}_VST SHARED ${SOURCES} ${JUCE_VST3_SOURCES})
 set_target_properties(${PROJECT_NAME}_VST PROPERTIES OUTPUT_NAME "BeatBox")
 set_target_properties(${PROJECT_NAME}_VST PROPERTIES SUFFIX ".vst3")
 target_link_libraries(${PROJECT_NAME}_VST JUCE)
+target_link_libraries(${PROJECT_NAME}_VST sfizz::sfizz)
 target_include_directories(${PROJECT_NAME}_VST PRIVATE Includes)
-target_compile_features(${PROJECT_NAME}_VST PRIVATE cxx_std_17)
+# target_compile_features(${PROJECT_NAME}_VST PRIVATE cxx_std_17)
