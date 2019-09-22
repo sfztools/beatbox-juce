@@ -3,12 +3,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(BeatBox VERSION 1.0.0 LANGUAGES CXX)
 
-# Change this if needed
-if(UNIX)
-    set(JUCE_ROOT_DIR "~/JUCE")
-else()
-    set(JUCE_ROOT_DIR "c:/JUCE")
-endif()
+# Change this if you want to use another juce library
+set(JUCE_ROOT_DIR "JuceLibraryCode")
 
 
 # Set these to match the juce header file, modulo the audio plugin clients
@@ -56,11 +52,10 @@ endif(WIN32)
 if (UNIX)
     find_package(Freetype REQUIRED)
     find_package(ALSA REQUIRED)
-    find_package(X11 REQUIRED)
     find_package(CURL REQUIRED)
     find_package(Threads REQUIRED)
     find_package(PkgConfig REQUIRED)
-    pkg_check_modules(deps REQUIRED IMPORTED_TARGET gtk+-3.0 glib-2.0 webkit2gtk-4.0)
+    pkg_check_modules(deps REQUIRED IMPORTED_TARGET gtk+-3.0 glib-2.0 webkit2gtk-4.0 x11 xinerama xext)
 endif()
 
 # Juce modules as library targets
@@ -82,7 +77,7 @@ target_include_directories(JUCE PUBLIC ${JUCE_MODULES_DIR}/juce_audio_processors
 # Compile features
 target_compile_features(JUCE PRIVATE cxx_std_17)
 if (UNIX)
-    target_link_libraries(JUCE ALSA::ALSA Freetype::Freetype X11::X11 X11::Xext X11::Xinerama CURL::libcurl PkgConfig::deps)
+    target_link_libraries(JUCE ALSA::ALSA Freetype::Freetype CURL::libcurl PkgConfig::deps)
     # Force include the app config
     target_compile_options(JUCE PUBLIC -include "AppConfig.h")
 endif()
