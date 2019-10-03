@@ -5,18 +5,18 @@ navigation:
   icon_category: "fas"
   pages:
   - title: BeatBox
-    url: /beatbox
+    url: https://github.com/sfztools/beatbox
     icon_type: "drum"
     icon_category: "fas"
     disabled: true
 
   - title: Sfizz Library
-    url: /sfizz
+    url: https://github.com/sfztools/sfizz
     icon_type: "play-circle"
     icon_category: "fas"
 
   - title: Sfizz Juce (Archived)
-    url: /sfizz-juce
+    url: https://github.com/sfztools/sfizz-juce
     icon_type: "play-circle"
     icon_category: "fas"
   -

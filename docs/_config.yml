@@ -34,24 +34,27 @@ plugins:
   - jekyll-sitemap
   - jemoji
 
-url: "https://sfztools.github.io/beatbox"
-
-spdx_license_id: "GPL-3.0-or-later"
-
-project:
-  name: "BeatBox"
-
 organization:
   name: "SfzTools"
   url: "https://github.com/sfztools"
 
-authors:
-  content: "Paul Ferrand"
-  web: "RedTide"
+project:
+  name: "BeatBox"
+  url: "https://sfztools.github.io/beatbox"
+  copyright_owner: "Paul Ferrand"
+  spdx_license_id: "GPL-3.0-or-later"
+  docs_path: "master/docs"
+  authors:
+    content: "Paul Ferrand"
+    web: "RedTide"
 
 google:
   analytics_code:
   cse_code:
 
-disqus_shortname:
+realfavicongenerator:
+  mask_icon_color: "#5bbad5"
+  msapplication_tile_color: "#da532c"
+  theme_color: "#ffffff"
 
+disqus_shortname:
