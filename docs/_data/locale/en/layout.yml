@@ -5,32 +5,32 @@ navigation:
   icon_category: "fas"
   pages:
   - title: BeatBox
-    url: https://github.com/sfztools/beatbox
+    url: https://sfztools.github.io/beatbox/
     icon_type: "drum"
     icon_category: "fas"
     disabled: true
 
   - title: Sfizz Library
-    url: https://github.com/sfztools/sfizz
+    url: https://sfztools.github.io/sfizz/
     icon_type: "play-circle"
     icon_category: "fas"
 
   - title: Sfizz Juce (Archived)
-    url: https://github.com/sfztools/sfizz-juce
+    url: https://sfztools.github.io/sfizz-juce/
     icon_type: "play-circle"
     icon_category: "fas"
   -
   - title: SFZ-Flat
-    url: https://github.com/sfztools/sfz-flat
+    url: https://github.com/sfztools/sfz-flat/
   -
   - title: Geany Syntax Highlight
-    url: https://github.com/sfztools/syntax-highlighting-geany
+    url: https://github.com/sfztools/syntax-highlighting-geany/
 
   - title: Sublime Text Syntax Highlight
-    url: https://github.com/sfztools/syntax-highlighting-sublime-text
+    url: https://github.com/sfztools/syntax-highlighting-sublime-text/
 
   - title: VSCode Syntax Highlight
-    url: https://github.com/sfztools/syntax-highlighting-vscode
+    url: https://github.com/sfztools/syntax-highlighting-vscode/
 
 - title: Pages
   type: dropdown
@@ -41,7 +41,7 @@ navigation:
     url: https://github.com/sfztools/
 
   - title: Repository
-    url: https://github.com/sfztools/beatbox
+    url: https://github.com/sfztools/beatbox/
 
 - title: Contacts
   icon_type: at
@@ -76,7 +76,7 @@ navigation:
   type: normal
   icon_type: home
   icon_category: fas
-  url: https://sfztools.github.io
+  url: https://sfztools.github.io/
 
 cards:
 - title: Follow us

@@ -55,8 +55,8 @@ After this, the behavior is:
 
 ## Contact and contributions
 
-Feel free to post an issue, or contact me by [email](mailto:paulfd@outlook.fr)
-if you need. Any contribution is welcome.
+Feel free to post an issue, or contact me by [email] if you need.
+Any contribution is welcome.
 There are many things to improve in the code and most notably in the GUI
 which is terrible but I'm very bad at this.
 However the best is probably to build beat descriptions/sfz files
@@ -74,6 +74,7 @@ JUCE is owned by [ROLI].
 [BeatBuddy]: https://singularsound.com/
 [beat description]: {{ "/drum-beat-description-files" | relative_url }}
 [build documentation page]: {{ "/build" | relative_url }}
+[email]: mailto:paulfd@outlook.fr
 [JUCE]: https://juce.com/
 [JSON files]: {{ "/beat" | relative_url }}
 [Leo Olivers]: https://github.com/altalogix/SFZero
