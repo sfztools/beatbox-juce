@@ -1,8 +1,9 @@
-.sass-cache
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
 .bundle
 .vendor
-_site
 assets/css/*.map
 assets/css/style.css
 assets/js/*.map

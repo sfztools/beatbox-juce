@@ -1,18 +1,10 @@
-# Source code for the [Sfizz](https://sfztools.github.io/sfizz) documentation website
+# Source code for the [BeatBox] documentation website
 
-This website is built using [Jekyll][], using [Node.js][] to compile
-all static assets including the [Bootstrap][] library and built on
-along with the [SASS][] stylesheets. Most of the content on the website is
-written using [Markdown][], making it extremely easy to write and maintain.
-Icons are provided by [Font Awesome][], favicons by [Favicon Generator][].
-
-[Bootstrap]: http://getbootstrap.com/
-[Favicon Generator]: https://realfavicongenerator.net/
-[Font Awesome]: http://fontawesome.io/
-[Jekyll]: http://jekyllrb.com/
-[Markdown]: https://daringfireball.net/projects/markdown/
-[Node.js]: http://nodejs.org/
-[SASS]: https://sass-lang.com/
+This website is built using [Jekyll], using [Node.js] to compile
+all static assets including the [Bootstrap] library and built on
+along with the [SASS] stylesheets. Most of the content on the website is
+written using [Markdown], making it extremely easy to write and maintain.
+Icons are provided by [Font Awesome], favicons by [Favicon Generator].
 
 ## Local Build Quick-start Guide
 
@@ -21,10 +13,19 @@ Icons are provided by [Font Awesome][], favicons by [Favicon Generator][].
 
 or manually:
 
-    $ gem update
-    $ gem install bundler
-    $ yarn --no-bin-links
-    $ yarn dist
-    $ bundle exec jekyll serve -w
+	$ gem update
+	$ gem install bundler
+	$ yarn --no-bin-links
+	$ yarn dist
+	$ bundle exec jekyll serve -w
 
 The local website should be available at <http://localhost:4000/>
+
+[BeatBox]: https://sfztools.github.io/beatbox
+[Bootstrap]: http://getbootstrap.com/
+[Favicon Generator]: https://realfavicongenerator.net/
+[Font Awesome]: http://fontawesome.io/
+[Jekyll]: http://jekyllrb.com/
+[Markdown]: https://daringfireball.net/projects/markdown/
+[Node.js]: http://nodejs.org/
+[SASS]: https://sass-lang.com/

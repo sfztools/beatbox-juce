@@ -7,22 +7,17 @@ date_fmt: "%B %d, %Y"
 <div markdown="1" class="jumbotron p-4 mb-3">
 
 This application is a live drummer that you can control using buttons or MIDI CC
-with at least 1 controller, as an arranger or a [BeatBuddy][] pedal would.
-The drum loops are described in simple [JSON files][].
+with at least 1 controller, as an arranger or a [BeatBuddy] pedal would.
+The drum loops are described in simple [JSON files].
 The application either outputs MIDI notes, and can also generate sounds
 internally using SFZ instruments.
-For now the sound generation uses [SFZero][], which has many limitations.
+For now the sound generation uses [SFZero], which has many limitations.
 It is possible to use it within a VST host with any drum machine,
 or with an external sound generator.
-Since it uses [JUCE][], it should be almost cross platform,
+Since it uses [JUCE], it should be almost cross platform,
 although I only tested Windows and Linux, and a tiny bit of Android.
 Contributions and comments are welcome, as well as beat description files.
 I'll put up some forum or sharing platform at some point.
-
-[BeatBuddy]: https://singularsound.com/
-[JSON files]: {{ "/beat" | relative_url }}
-[JUCE]: https://juce.com/
-[SFZero]: http://stevefolta.github.io/SFZero/
 
 [![Travis](https://img.shields.io/travis/com/sfztools/beatbox.svg?label=Linux-macOS&style=popout&logo=travis)](https://travis-ci.com/sfztools/beatbox)
 [![AppVeyor](https://img.shields.io/appveyor/ci/sfztools/beatbox.svg?label=Windows&style=popout&logo=appveyor)](https://ci.appveyor.com/project/sfztools/beatbox)
@@ -33,24 +28,21 @@ I'll put up some forum or sharing platform at some point.
 
 ## Installation
 
-Windows binaries are available on the [releases page][],
+Windows binaries are available on the [releases page],
 along with Raspberry Pi binaries.
 
-See the [build documentation page][] about how to build the application
+See the [build documentation page] about how to build the application
 from the source code.
-
-[build documentation page]: {{ "/build" | relative_url }}
-[releases page]: https://github.com/sfztools/beatbox/releases
 
 ## Usage
 
 The usage is quite straightforward.
-Upon launching the application you have to select at least a [beat description][]
+Upon launching the application you have to select at least a [beat description]
 by clicking on Rhythms.
 You will be presented with a list of the current beat descriptions you have
 previously entered, as well as a button to add more.
 To load a rhythm, just double click it.
-You may also load an [Sfz file][] in the same way, or use the MIDI output.
+You may also load an [SFZ file] in the same way, or use the MIDI output.
 
 Once the rhythm is loaded, you can use the buttons to launch the rhythm,
 fills and parts.
@@ -60,9 +52,6 @@ After this, the behavior is:
 - a tap starts the live rhythm, and if already started it makes a fill.
 - a long tap transitions into the next part.
 - 2 taps trigger the ending.
-
-[beat description]: {{ "/drum-beat-description-files" | relative_url }}
-[Sfz file]: {{ "drum-sfz-files" | relative_url }}
 
 ## Contact and contributions
 
@@ -75,12 +64,28 @@ and share the love! :)
 
 ## Acknowledgments
 
-The original SFZero code is from [Steve Folta](http://stevefolta.github.io/SFZero/).
+The original SFZero code is from [Steve Folta].
 There are many updates to the original codebase.
-The one I'm using has been improved by Leo Olivers and cleaned up by [MatkatMusic](https://github.com/matkatmusic).
+The one I'm using has been improved by [Leo Olivers]
+and cleaned up by [MatkatMusic].
 
-JUCE is owned by [ROLI](https://roli.com/).
+JUCE is owned by [ROLI].
 
+[BeatBuddy]: https://singularsound.com/
+[beat description]: {{ "/drum-beat-description-files" | relative_url }}
+[build documentation page]: {{ "/build" | relative_url }}
+[JUCE]: https://juce.com/
+[JSON files]: {{ "/beat" | relative_url }}
+[Leo Olivers]: https://github.com/altalogix/SFZero
+[MatkatMusic]: https://github.com/matkatmusic/SFZero
+[releases page]: https://github.com/sfztools/beatbox/releases
+[ROLI]: https://roli.com/
+[SFZ file]: {{ "drum-sfz-files" | relative_url }}
+[SFZero]: http://stevefolta.github.io/SFZero/
+[Steve Folta]: http://stevefolta.github.io/SFZero/
+
+<!--
 ## Latest News
 
 {% include post.html %}
+-->
