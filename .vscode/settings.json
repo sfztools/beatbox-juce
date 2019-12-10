@@ -74,6 +74,5 @@
         "xmemory0": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp"
-    },
-    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+    }
 }

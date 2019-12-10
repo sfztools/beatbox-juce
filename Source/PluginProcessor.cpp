@@ -246,6 +246,7 @@ void BeatBoxAudioProcessor::processInputMidiEvents(MidiBuffer& midiMessages, dou
     int position;
     while (midiIterator.getNextEvent(evt, position))
     {
+        std::cerr << "Event " << evt.getDescription() << " at time " << position << '\n';
         if (evt.isController() && evt.getChannel() == config.getInputChannel())
         {
             const bool controllerStatus { evt.getControllerValue() > 0 };
