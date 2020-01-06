@@ -86,9 +86,9 @@ target_include_directories(JUCE PUBLIC ${JUCE_MODULES_DIR}/juce_audio_processors
 # Compile features
 # target_compile_features(JUCE PRIVATE cxx_std_17)
 if (UNIX)
-    target_link_libraries(JUCE ALSA::ALSA Freetype::Freetype CURL::libcurl PkgConfig::deps)
+    target_link_libraries(JUCE ALSA::ALSA Freetype::Freetype CURL::libcurl PkgConfig::deps ${CMAKE_DL_LIBS})
     # Force include the app config
-    target_compile_options(JUCE PUBLIC -include "AppConfig.h")
+    target_compile_options(JUCE PUBLIC -include "AppConfig.h" -fPIC)
 endif()
     
 if(MSVC)
@@ -112,7 +112,7 @@ if(WIN32)
     # target_compile_options(${PROJECT_NAME}_Standalone PRIVATE /permissive-)
 endif(WIN32)
 if(UNIX)
-    target_link_libraries(${PROJECT_NAME}_Standalone ${CMAKE_DL_LIBS} Threads::Threads)
+    target_link_libraries(${PROJECT_NAME}_Standalone ${CMAKE_DL_LIBS} Threads::Threads ${CMAKE_DL_LIBS})
 endif(UNIX)
 set_target_properties(${PROJECT_NAME}_Standalone PROPERTIES OUTPUT_NAME "BeatBox")
 target_link_libraries(${PROJECT_NAME}_Standalone JUCE)

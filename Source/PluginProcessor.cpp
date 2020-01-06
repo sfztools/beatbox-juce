@@ -206,9 +206,9 @@ void BeatBoxAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer
     while (midiIterator.getNextEvent(evt, position))
     {
         if (evt.isNoteOn())
-            sfzSynth.noteOn(position, evt.getChannel(), evt.getNoteNumber(), evt.getVelocity());
+            sfzSynth.noteOn(position, evt.getNoteNumber(), evt.getVelocity());
         if (evt.isNoteOff())
-            sfzSynth.noteOff(position, evt.getChannel(), evt.getNoteNumber(), evt.getVelocity());
+            sfzSynth.noteOff(position, evt.getNoteNumber(), evt.getVelocity());
     }
 
     // Render the block
