@@ -43,7 +43,7 @@ navigation:
     url: "https://github.com/sfztools/syntax-highlighting-sublime-text/"
 
   - label: "Vim Syntax Highlight"
-    url: https://github.com/sfztools/sfz.vim
+    url: "https://github.com/sfztools/sfz.vim"
 
   - label: "VSCode Syntax Highlight"
     url: "https://github.com/sfztools/syntax-highlighting-vscode/"
@@ -79,7 +79,7 @@ cards:
     icon_category: "fab"
 
   - label: "IRC"
-    url: https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfztools
+    url: "https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfztools"
     icon_type: "hashtag"
     icon_category: "fas"
 
@@ -89,7 +89,7 @@ cards:
     icon_category: "fas"
 
   - label: "GitHub Repository"
-    url: "https://github.com/sfztools/sfizz/"
+    url: "https://github.com/sfztools/beatbox/"
     icon_type: "github"
     icon_category: "fab"
 
