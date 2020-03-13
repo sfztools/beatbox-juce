@@ -1,0 +1,24 @@
+/_site/
+/.sass-cache/
+/.jekyll-cache/
+/.jekyll-metadata/
+/.bundle/
+/.vendor/
+/node_modules/
+/assets/css/*.map
+/assets/css/style.css
+/assets/js/*.map
+Gemfile.lock
+package-lock.json
+yarn.lock
+*.code-workspace
+*.log
+!/documentation/build/*
+
+# Unstaged files in other branches
+/.DS_Store/
+/external/
+/build*
+/Builds
+/Doxyfile
+*.txt.user*
